@@ -73,6 +73,19 @@
                 }
                 
                 .service {
+                    &-broadband {
+                        .row {
+                            > div {
+                                padding-left: 5px;
+                                padding-right: 5px;
+                                
+                                img {
+                                    max-width: 100%;
+                                }
+                            }
+                        }
+                    }
+                    
                     &-wavelengths {
                         .image {
                             text-align: center;
