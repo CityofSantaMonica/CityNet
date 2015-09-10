@@ -1,3 +1,7 @@
+# - name: John Doe
+#   postion: Some Position
+#   placeholder: true       # Don't look for an image, just use the placeholder instead
+
 - name: Gary Carter
   position: Community Broadband Manager
   employees:
@@ -9,3 +13,5 @@
       position: Assistant Broadband Analyst
     - name: Jamila Haji
       position: Community Program Specialist
+    - name: Omar De Arcos
+      position: Administrative Intern

@@ -2,7 +2,13 @@
     {% for staff in include.roster %}
         <li>
             <article>
-                <img alt="{{ staff.name }}" src="assets/images/staff/{{ staff.name | replace: ' ', '_' }}.jpg">
+                {% if staff.placeholder %}
+                    {% assign image = "Placeholder" %}
+                {% else %}
+                    {% assign image = staff.name | replace: ' ', '_' %}
+                {% endif %}
+                
+                <img alt="{{ staff.name }}" src="assets/images/staff/{{ image }}.jpg">
                 <p><strong>{{ staff.name }}</strong></p>
                 <p>{{ staff.position }}</p>
             </article>
