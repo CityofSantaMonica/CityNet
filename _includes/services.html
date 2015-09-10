@@ -9,7 +9,12 @@
                     {% assign active = "" %}
                 {% endif %}
             
-                <li role="presentation" class="{{ active }}"><a class="js-noSmoothScroll" href="#{{ service.jsid }}" aria-controls="messages" role="tab" data-toggle="tab">{{ service.name }}</a></li>
+                <li role="presentation" class="{{ active }}">
+                    <a class="js-noSmoothScroll" href="#{{ service.jsid }}" aria-controls="messages" role="tab" data-toggle="tab">
+                        <img alt="{{ service.name }}" class="service-icon" src="assets/images/{{ service.slug }}.png" />
+                        <span>{{ service.name }}</span>
+                    </a>
+                </li>
             {% endfor %}
         </ul>
     </div>

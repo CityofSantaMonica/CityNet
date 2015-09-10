@@ -1,4 +1,4 @@
-﻿.products-section {
+.products-section {
     padding: {
         bottom: 20px;
         top: 10px;
@@ -32,10 +32,19 @@
 
                 a {
                     border: 0;
+                    padding: {
+                        left: 20px;
+                        right: 20px;
+                    }
 
                     &:hover {
                         background-color: transparent;
                         border: 0;
+                    }
+                    
+                    img {
+                        height: 20px;
+                        margin-right: 5px;
                     }
                 }
             }
