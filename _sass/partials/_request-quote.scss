@@ -1,0 +1,17 @@
+﻿.request-quote {
+    .form-column {
+        @include make-row();
+
+        > section {
+            @include make-md-column(4);
+
+            > div {
+                @extend .form-group;
+            }
+        }
+    }
+
+    .form-actions {
+        text-align: center;
+    }
+}

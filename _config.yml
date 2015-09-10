@@ -1,0 +1,20 @@
+# Site settings
+
+title: Santa Monica CityNet
+baseurl: ""
+url: "http://smcitynet.com" # the base hostname & protocol for your site
+
+contact:
+    phone: "3104342612" # treat this like a string
+    email: gary.carter@smgov.net
+
+social:
+    - icon: twitter
+      site: https://twitter.com/SMCityNet
+    - icon: youtube
+      site: https://www.youtube.com/user/smcitynet
+
+
+# Build Settings
+
+markdown: redcarpet

@@ -1,0 +1,41 @@
+<footer class="c-footer">
+    <div class="container">
+        <section class="content">
+            <section>
+                <h3>CityNet</h3>
+                <ul>
+                    <li><a href="#Features">Features</a></li>
+                    <li><a href="#History">History</a></li>
+                    <li><a href="#Request-Quote">Request a Quote</a></li>
+                    <li><a href="#Services">Services</a></li>
+                    <li><a href="#Team">Team</a></li>
+                    <li><a href="#Trusted-By">Trusted By</a></li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Contact</h3>
+                <p>
+                    <a href="tel:{{ site.contact.phone }}">
+                        {% include templates/phone.html phone=site.contact.phone %}
+                    </a>
+                </p>
+                <p>
+                    <a href="mailto:{{ site.contact.email }}">
+                        {{ site.contact.email }}
+                    </a>
+                </p>
+            </section>
+        </section>
+    </div>
+
+    <div class="container join-us">
+        <h2>Join Us On</h2>
+        <ul class="social-media">
+            {% for sm in site.social %}
+                <li><a href="{{ sm.site }}"><i class="fa fa-{{ sm.icon }}"></i></a></li>
+            {% endfor %}
+        </ul>
+        <p class="copyright">City of Santa Monica &copy; 2015</p>
+    </div>
+</footer>

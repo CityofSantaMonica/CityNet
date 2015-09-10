@@ -1,0 +1,26 @@
+﻿// CSS Flex-Tree settings
+$chart-object-border: none;
+$chart-object-padding: 10px 20px;
+$chart-corner-radius: $border-radius-base;
+$chart-line-border: 2px solid $Color-CityNet-Green;
+$chart-line-height: 25px;
+$chart-min-width: $screen-sm-min;
+
+// CSS Timeline Settings
+$Timeline-Height: 720px;
+$Timeline-HeightDifference: 120px;
+$Timeline-Indentation: 80px;
+
+$Timeline-ConnectorWidth: 4px;
+$Timeline-ConnectorType: solid;
+$Timeline-ConnectorColor: $Color-CityNet-Green;;
+$Timeline-ConnectorLine: $Timeline-ConnectorWidth $Timeline-ConnectorType $Timeline-ConnectorColor;
+
+$Timeline-EventMaxWidth: 200px;
+$Timeline-EventMargin: 10px;
+
+// CSS Backgrounds
+$Background-Alternate-Color: $Color-CityNet-DarkBlue;
+
+// Website Settings
+$CityNet-Header-Height: 600px;

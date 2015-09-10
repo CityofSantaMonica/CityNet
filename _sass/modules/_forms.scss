@@ -1,0 +1,28 @@
+﻿.form-address {
+    > div {
+        @extend .form-group;
+    }
+}
+
+.form-address__city,
+.form-address__zip {
+    @include make-sm-column(6);
+
+    padding: 0;
+}
+
+.form-address__city {
+    padding-left: 0;
+
+    @include respond-to(tablets) {
+        padding-right: 15px;
+    }
+}
+
+.form-address__zip {
+    padding-right: 0;
+
+    @include respond-to(tablets) {
+        padding-left: 15px;
+    }
+}

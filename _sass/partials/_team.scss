@@ -1,0 +1,64 @@
+﻿.team-section {
+    background-color: $Background-Alternate-Color;
+    color: $Color-White;
+    //background-image: url("../images/pw_pattern.png");
+
+    // Because a flow-chart doesn't work well on smaller screens, it'll require some workarounds
+    // Instead of mobile-first, we'll have to do desktop-first; this is necessary because the flowchart
+    // was built for tablet and larger so it would have to reset all of the phablet and phone CSS
+    .team {
+        ul {
+            list-style: none;
+            padding-left: 0;
+
+            // For phablets, and smaller we'll need to modify our layout but only apply the rules to
+            // the largest phablet; this is done so the tablet/desktop flowchart can handle things
+            // itself
+            @media screen and (max-width: $screen-ms-max) {
+                @include display(flex);
+                @include flex-direction(row);
+                @include flex-wrap(wrap);
+
+                li > ul > li {
+                    margin-top: 30px;
+                    width: 33%;
+                }
+            }
+
+            @media screen and (max-width: $screen-xs-max) {
+                li > ul li {
+                    width: 50%;
+                }
+            }
+
+            li {
+                article {
+                    $image_size: 125px;
+
+                    text-align: center;
+
+                    img {
+                        border-radius: 50%;
+                        height: auto;
+                        margin-bottom: 10px;
+                        width: 92px;
+
+                        @include respond-to(desktops) {
+                            width: $image_size;
+                        }
+
+                    }
+
+                    p {
+                        color: $Color-LightGrey;
+                        margin: 0;
+
+                        strong {
+                            color: $Color-White;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

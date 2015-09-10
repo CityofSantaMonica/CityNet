@@ -1,0 +1,95 @@
+﻿.u-timeline-container {
+    border-top: 1px solid transparent; // Prevent collapsing margins
+    cursor: default;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: static;
+
+    @include respond-to(desktops) {
+        cursor: move;
+        margin-top: 20px;
+        padding-left: 0;
+        padding-right: 0;
+        position: absolute;
+    }
+
+    .c-timeline__container__sealevel,
+    .c-timeline__container__superscript {
+        height: 60.5%;
+    }
+}
+
+.timeline-section {
+    @include clearfix();
+
+    min-height: 900px;
+    max-width: 100%;
+    overflow: hidden;
+    position: static;
+
+    @include respond-to(desktops) {
+        position: relative;
+    }
+}
+
+.timeline-controls {
+    text-align: center;
+
+    h3 {
+        display: inline-block;
+    }
+
+    span {
+        display: none;
+        font-size: 30px;
+        margin: 0 10px;
+
+        i {
+            vertical-align: middle;
+        }
+
+        @include respond-to(desktops) {
+            display: inline;
+        }
+    }
+}
+
+.js-disabled {
+    .u-timeline-container {
+        @include container-fixed();
+
+        position: static;
+    }
+}
+
+.js-enabled {
+    .u-timeline-container {
+        .c-timeline {
+            @include respond-to(desktops) {
+                width: 9999px;
+            }
+        }
+
+        .c-timeline__event__article {
+            padding-left: 10px;
+            padding-top: 10px;
+
+            @include respond-to(desktops) {
+                padding: 0;
+            }
+        }
+
+        .c-timeline__event__container {
+            @include respond-to(desktops) {
+                background-color: rgba($Color-CityNet-Green, 0.2);
+            }
+        }
+
+        .c-timeline__container__event__article {
+            @include respond-to(desktops) {
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+        }
+    }
+}

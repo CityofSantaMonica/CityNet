@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+    {% include head.html %}
+  
+<!--[if lte IE 9]>
+    <body class="ie9-fallback">
+<![endif]-->
+<!--[if !IE]>-->
+    <body>
+<!--<![endif]-->
+
+        {% include header.html %}
+
+        <div class="page-content">
+          <div class="wrapper">
+            {{ content }}
+          </div>
+        </div>
+
+        {% include footer.html %}
+    </body>
+</html>

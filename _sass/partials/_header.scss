@@ -1,0 +1,147 @@
+$logo_size: 75px; // Based on the logo height, we'll calculate the margin for the rest of the elements in the header
+$logo_padding: 25px; // The space the logos should have from the edge of the screen
+
+%bg-image {
+    background-image: url("../images/citynet-header.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+// Should Tubular fail to load for whatever reason, we'll have this div behind if for desktops only. Otherwise, this
+// the rest of the CSS handles mobile views
+.image-fallback {
+    @include respond-to(desktops) {
+//        @extend %bg-image;
+        background-image: url("../images/citynet-header.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+
+        height: $CityNet-Header-Height;
+        position: absolute;
+        width: 100%;
+        z-index: -10;
+    }
+}
+
+.welcome-header {
+    @extend %bg-image;
+
+    @include respond-to(desktops) {
+        background: none;
+        height: $CityNet-Header-Height;
+    }
+
+    .logo-container {
+        @include make-row();
+
+        margin: 0;
+
+        div {
+            @include make-xs-column(6);
+
+            img {
+                height: auto;
+
+                @include respond-to(phablets) {
+                    width: auto;
+                }
+            }
+
+            &.citynet {
+                @extend .text-left;
+
+                padding-left: $logo_padding;
+
+                img {
+                    // Our CityNet logo has a dropshadow and it needs to have some "whitespace" where the shadow fades, so we'll move it the left 20px
+                    margin: 10px 0 10px -20px;
+                    width: 100%;
+
+                    @include respond-to(phablets) {
+                        width: auto;
+                    }
+                }
+            }
+
+            &.city-sm {
+                @extend .text-right;
+
+                padding-right: $logo_padding;
+
+                img {
+                    margin: 20px 0;
+                    width: 50px;
+                
+                    @include respond-to(phablets) {
+                        width: auto;
+                    }
+                }
+            }
+        }
+    }
+
+    .motto-container {
+        @extend .text-center;
+
+        bottom: 0;
+        color: #FFFFFF;
+        margin: 0 0 $logo_size;
+
+        @include respond-to(desktops) {
+            margin-bottom: 0;
+            margin-top: 110px;
+        }
+
+        h1,
+        h2 {
+            @extend %text-shadow;
+        }
+
+        h1 {
+            font-size: 30px;
+            margin-bottom: 0;
+
+            @include respond-to(tablets) {
+                font-size: 44px;
+            }
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-top: 0;
+
+            @include respond-to(tablets) {
+                font-size: 25px;
+            }
+        }
+
+        .button {
+            background-color: rgba($Color-CityNet-Green, 0.8);
+            border-radius: $border-radius-base;
+            color: #FFFFFF;
+            display: inline-block;
+            font-weight: bold;
+            margin-top: 40px;
+            padding: 10px 20px;
+            text-decoration: none;
+        }
+    }
+}
+
+.jumbotube-container,
+.jumbotube-shield {
+    display: none;
+    height: $CityNet-Header-Height !important;
+    position: absolute !important;
+
+    @include respond-to(desktops) {
+        display: block;
+    }
+}
+
+.jumbotube-player {
+    min-height: 900px;
+    top: -180px !important;
+}

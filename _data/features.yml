@@ -1,0 +1,19 @@
+- css: blue
+  icon: clock-o
+  name: 24x7 Network Operations Center
+
+- css: grey u-server-fix
+  icon: server
+  name: Static IP Addresses
+
+- css: green u-tachometer-fix
+  icon: tachometer
+  name: Symmetrical Speeds
+
+- css: red
+  icon: building-o
+  name: On-Site Support
+
+- css: orange
+  icon: cogs
+  name: Customer Portal

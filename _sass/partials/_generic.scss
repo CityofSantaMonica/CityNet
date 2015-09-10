@@ -1,0 +1,17 @@
+﻿main {
+    > section {
+        padding-bottom: 40px;
+        padding-top: 40px;
+        position: relative;
+
+        h3 {
+            @extend .text-center;
+
+            margin-top: 0;
+        }
+
+        > div > section {
+            margin-top: 20px;
+        }
+    }
+}

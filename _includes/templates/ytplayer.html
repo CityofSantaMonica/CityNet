@@ -1,0 +1,10 @@
+<div id="yt-{{ include.id }}" class="youtube-theatre">
+    <div class="container">
+        <div class="stage">
+            <div class="options">
+                <a class="theatre-exit" data-ytid="{{ include.id }}"><i class="fa fa-times"></i></a>
+            </div>
+            <iframe class="js-ytplayer" id="player-{{ include.id }}" data-ytid="{{ include.id }}" src="https://www.youtube.com/embed/{{ include.id }}?enablejsapi=1&showinfo=0&rel=0" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,78 @@
+﻿$Footer-Line-Color: rgba($Color-White, 0.2);
+
+.c-footer {
+    background-color: $Color-CityNet-DarkBlue;
+    border-top: 5px solid $Color-CityNet-Green;
+    color: $Color-White;
+    padding: 20px 0 30px;
+
+    .join-us {
+        border-top: 1px solid $Footer-Line-Color;
+        margin-top: 30px;
+        padding-top: 10px;
+        text-align: center;
+
+        h2 {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .social-media {
+            list-style-type: none;
+            padding-left: 0;
+
+            li {
+                @include set-circular-size(35px);
+
+                border: 1px solid $Footer-Line-Color;
+                display: inline-block;
+                margin-right: 10px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                a {
+                    color: $Color-White;
+                }
+            }
+        }
+
+        .copyright {
+            color: $Footer-Line-Color;
+            margin-top: 30px;
+        }
+    }
+
+    .content {
+        @include make-row();
+
+        > section {
+            @include make-sm-column(4);
+
+            h3 {
+                font-size: 20px;
+                margin: 0;
+                padding-bottom: 5px;
+            }
+
+            p {
+                margin-bottom: 0;
+            }
+
+            ul {
+                list-style-type: none;
+                padding-left: 0;
+            }
+
+            p,
+            ul {
+                padding-left: 15px;
+            }
+
+            &:last-child {
+                @include make-sm-column-offset(4);
+            }
+        }
+    }
+}

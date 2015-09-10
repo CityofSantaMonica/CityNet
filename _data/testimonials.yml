@@ -1,0 +1,23 @@
+- name: Jason Peterson
+  position: Director of Network Services
+  quote: One of our top providers for connectivity
+  youtubeid: IIO7ejuXh3Q
+  css: jason-bg
+
+- name: TJ Thinakaran
+  position: Co-Founder &amp; COO - CallFire
+  quote: We are a tech company. Our Internet is very important to us.
+  youtubeid: zsAwKaDph2g
+  css: tj-bg
+
+- name: Jeremy Foint
+  position: IT Manager - Loews Santa Monica Beach Hotel
+  quote: We’re taking advantage of the 200 Mbs circuit that we have available coming in from Santa Monica’s City Net Program.
+  youtubeid: CWkQSX0pCWA
+  css: jeremy-bg
+
+- name: Sean Whitele
+  position: COO TigerTex
+  quote: I was really impressed we were able to get 150 Mbs of traffic so fast.
+  youtubeid: yNKOoZghXvY
+  css: sean-bg

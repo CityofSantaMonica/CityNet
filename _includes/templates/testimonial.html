@@ -1,0 +1,19 @@
+{% if include.active == true %}
+    {% assign active = "active" %}
+{% endif %}
+
+<div class="item {{ active }} {{ include.testimonial.css }}">
+    <div class="container">
+        <div class="carousel-caption">
+            <h1>{{ include.testimonial.quote }}</h1>
+            <p>{{ include.testimonial.name }}, {{ include.testimonial.position }}</p>
+            <p>
+                <a class="youtube-player js-visible" data-ytid="{{ include.testimonial.youtubeid }}" role="button">
+                    <i class="fa fa-play"></i>
+                </a>
+            </p>
+        </div>
+    </div>
+</div>
+
+{% assign active = null %}

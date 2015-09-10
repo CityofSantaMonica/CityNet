@@ -1,0 +1,182 @@
+﻿/// Apply only specific CSS rules when an element has a specified amount of siblings
+/// 
+/// @param {Number} @siblingCount Number of children a parent must have for these CSS rules
+///                               to be applied
+/// @param {CSS}    @rules        The CSS rules to be applied
+
+@mixin respond-to-sibling-count($siblingCount) {
+    &:first-child:nth-last-child(#{$siblingCount}) {
+        &,
+        & ~ li {
+            @content;
+        }
+    }
+}
+
+/// Apply only specific CSS rules to a specific element when the parent has a specified amount of children
+/// 
+/// @param {Number [unitless]} @siblingCount
+///   Number of children a parent must have for these CSS rules to be applied
+///
+/// @param {nth-child} @targetChild
+///   The target child that will get these CSS rules applied to. This can be a number of a valid `nth-child` rule
+///
+/// @param {CSS} @rules
+///   The CSS rules to be applied
+
+@mixin respond-to-sibling-count-target($siblingCount, $targetChild) {
+    $lastChild: abs($targetChild);
+    
+    @if ($targetChild == -1) {
+        &:first-child:nth-last-child(#{$siblingCount}) ~ li:last-child {
+            @content;
+        }
+    }
+    @else if ($targetChild < -1) {
+        &:first-child:nth-last-child(#{$siblingCount}) ~ li:nth-last-child(#{$lastChild}) {
+            @content;
+        }
+    }
+    @else if ($targetChild > 0) {
+        &:first-child:nth-last-child(#{$siblingCount}) ~ li:nth-child(#{$targetChild}) {
+            @content;
+        }
+    }
+}
+
+.icon-bullet-points {
+    @include make-row();
+    
+    list-style-type: none;
+    padding-left: 0;
+
+    li {
+        @include make-row();
+        @include make-ms-column(6);
+        
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 15px;
+
+        @include respond-to-sibling-count(3n) {
+            @include make-sm-column(4);
+        }
+
+        @include respond-to-sibling-count(4n) {
+            @include make-sm-column(3);
+        }
+
+        @include respond-to-sibling-count(5n) {
+            @include make-sm-column(4);
+
+            @include respond-to(tablets) {
+                &:nth-child(n+4) {
+                    padding-top: 20px;
+                }
+            }
+        }
+
+        @include respond-to-sibling-count(10n) {
+            @include make-sm-column(3);
+        }
+
+        @include respond-to-sibling-count-target(5n, -2) {
+            @include make-sm-column-offset(2);
+        }
+
+        @include respond-to-sibling-count-target(5n, -1) {
+            @include make-ms-column-offset(3);
+            @include make-sm-column-offset(0);
+        }
+
+        @include respond-to-sibling-count-target(10n, -2) {
+            @include make-ms-column-offset(0);
+            @include make-sm-column-offset(3);
+        }
+
+        @include respond-to(phablets) {
+            height: 180px;
+            margin-bottom: 0;
+            text-align: center;
+        }
+
+        @include respond-only-to(phones) {
+            display: table;
+            width: 100%;
+
+            .icon-container,
+            .icon-description {
+                display: table-cell;
+            }
+
+            .icon-container {
+                width: 30%;
+            }
+
+            .icon-description {
+                padding: {
+                    left: 0 !important;
+                    top: 0 !important;
+                }
+                vertical-align: middle;
+            }
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .icon-container {
+            @include make-ms-column(12);
+
+            .circular-fa {
+                @include set-circular-size(65px);
+
+                color: #FFFFFF;
+                display: block;
+                font-size: 40px;
+                margin-left: auto;
+                margin-right: auto;
+
+                @include respond-to(phablets) {
+                    @include set-circular-size(100px);
+                    
+                    font-size: 55px;
+                    margin-bottom: 10px;
+                    margin-top: 10px;
+                }
+
+                &.blue {
+                    color: #5473b5;
+                }
+
+                &.grey {
+                    color: #9B9B9B;
+                }
+
+                &.green {
+                    color: #7cae7c;
+                }
+
+                &.red {
+                    color: #c84343;
+                }
+
+                &.orange {
+                    color: #D78B35;
+                }
+            }
+        }
+
+        .icon-description {
+            @include make-ms-column(12);
+
+            font-size: 18px;
+            padding-top: 5px;
+
+            @include respond-to(phablets) {
+                padding-top: 0;
+            }
+        }
+    }
+}

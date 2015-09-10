@@ -1,0 +1,148 @@
+﻿.products-section {
+    padding: {
+        bottom: 20px;
+        top: 10px;
+    }
+
+    .product-tabs {
+        .nav {
+            border-bottom: 0;
+            box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.1);
+            display: none;
+            text-align: center;
+
+            @include respond-to(tablets) {
+                display: block;
+            }
+
+            li {
+                display: inline-block;
+                float: none;
+                font-size: 20px;
+                margin-bottom: 0;
+
+                &.active {
+                    border-bottom: 3px solid $Color-CityNet-Green;
+
+                    a {
+                        background-color: transparent;
+                        border: 0;
+                    }
+                }
+
+                a {
+                    border: 0;
+
+                    &:hover {
+                        background-color: transparent;
+                        border: 0;
+                    }
+                }
+            }
+        }
+
+        .tab-content {
+            @include respond-to(desktops) {
+                padding: {
+                    bottom: 30px;
+                    top: 40px;
+                }
+            }
+
+            .tab-pane {
+                @include make-row();
+
+                @media screen and (max-width: $screen-sm-min) {
+                    display: block;
+                    margin-top: 20px;
+                }
+
+                @include respond-to(desktops) {
+                    &:first-child {
+                        margin-top: 0;
+                    }
+                }
+
+                .service-container {
+                    margin: 0 auto;
+                    width: 90%;
+
+                    @include respond-to(tablets) {
+                        display: table;
+                        padding: 40px 0px;
+                        width: 100%;
+                    }
+
+                    @include respond-to(desktops) {
+                        padding: 0;
+                        width: 80%;
+                    }
+
+                    figure,
+                    article {
+                        @include respond-to(tablets) {
+                            display: table-cell;
+                            vertical-align: middle;
+                        }
+                    }
+
+                    figure {
+                        margin-bottom: 15px;
+                        text-align: center;
+
+                        @include respond-to(tablets) {
+                            margin-bottom: 0;
+                            padding-right: 50px;
+                            text-align: right;
+                        }
+
+                        img {
+                            width: 30%;
+
+                            @include respond-to(tablets) {
+                                width: auto;
+                            }
+                        }
+                    }
+
+                    article {
+                        .services {
+                            margin-top: 20px;
+
+                            @include respond-to(tablets) {
+                                padding-left: 0;
+                                text-align: center;
+                            }
+
+                            li {
+                                font-weight: bold;
+
+                                @include respond-to(tablets) {
+                                    display: inline-block;
+                                    padding: 5px 40px 5px 10px;
+
+                                    &:before {
+                                        color: $Color-CityNet-Green;
+                                        content: "";
+                                        display: list-item;
+                                        margin-left: -15px;
+                                        position: absolute;
+                                    }
+
+                                    &:first-child {
+                                        list-style: none;
+                                        padding-left: 0;
+                                    }
+
+                                    &:last-child {
+                                        padding-right: 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

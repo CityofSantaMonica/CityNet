@@ -1,0 +1,7 @@
+﻿// Variables that will override Bootstrap's default variables
+
+$brand-primary: $Color-CityNet-Green;
+
+$screen-xs-min: 320px;
+$screen-ms-min: 480px;
+$screen-xs-max: ($screen-ms-min - 1);

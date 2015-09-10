@@ -1,0 +1,18 @@
+{% if forloop.first == true %}
+    {% assign active = "active" %}
+{% else %}
+    {% assign active = "" %}
+{% endif %}
+
+{% capture partial %}partials/{{ include.service.slug }}.html{% endcapture %}
+
+<div role="tabpanel" class="tab-pane {{ active }}" id="{{ include.service.jsid }}">
+    <div class="service-container">
+        <figure>
+            <img src="assets/images/{{ include.service.slug }}.png" />
+        </figure>
+        <section class="service-{{ include.service.slug }}">
+            {% include {{ partial }} %}
+        </section>
+    </div>
+</div>

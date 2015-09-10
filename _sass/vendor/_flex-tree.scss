@@ -1,0 +1,154 @@
+﻿// Sample CSS Flex-Tree Usage
+// ==========================
+//
+// <!-- The container is the only class required -->
+// <div class="flex-tree-container">
+//   <ul>
+//     <li>
+//       <p>Parent</p>
+//       <ul>
+//         <li>
+//           <p>Child</p>
+//           <ul>
+//             <li><p>Grand Child</p></li>
+//             <li><p>Grand Child</p></li>
+//             <li><p>Grand Child</p></li>
+//           </ul>
+//         </li>
+//         <li>
+//             <p>Child</p>
+//             <ul>
+//                 <li><p>Grand Child</p></li>
+//               </ul>
+//           </li>
+//       </ul>
+//     </li>
+//   </ul>
+// </div>
+
+
+.flex-tree-container {
+    // The minimum width this tree needs to have in order for this to work
+    // Wide trees won't work well on a mobile screen so we need to limit ourselves
+    @media(min-width: $chart-min-width) {
+        ul {
+            @include display(flex);
+
+            list-style: none;
+            padding-left: 0;
+            text-align: center;
+
+            > li {
+                @include flex(1);
+
+                box-sizing: border-box;
+                padding: 0 5px;
+
+                // We'll accept any container that's not a `ul` or `li` because that would just be silly
+                > *:not(ul):not(li) {
+                    border: $chart-object-border;
+                    display: inline-block;
+                    margin: 0 auto;
+                    padding: $chart-object-padding;
+                    position: relative;
+
+                    // We want to add a connector on the bottom of the element unless we've reached the bottom of the tree
+                    // which is signified by :last-child
+                    &:not(:last-child) {
+                        &:after {
+                            border-left: $chart-line-border;
+                            bottom: -1 * $chart-line-height;
+                            content: '';
+                            height: $chart-line-height;
+                            left: 50%;
+                            position: absolute;
+                        }
+                    }
+                }
+
+                // We've reached the children elements
+                ul {
+                    margin-top: ($chart-line-height * 2) - 1; // Fix 1px spacing between borders, no big deal
+                    position: relative;
+
+                    li {
+                        position: relative;
+
+                        // The :before will be the horizontal line on the right side of a child connector and the :after
+                        // will be the left side of the child connector. The child connector is the vertical line going
+                        // down to its children.
+                        &:after,
+                        &:before {
+                            border-top: $chart-line-border;
+                            content: '';
+                            position: absolute;
+                            top: -1 * $chart-line-height;
+                            width: 50%;
+                        }
+
+                        &:before {
+                            border-left: $chart-line-border;
+                            height: $chart-line-height;
+                            left: 50%;
+                        }
+
+                        &:after {
+                            right: 50%;
+                        }
+
+                        // The first and last children won't have to connect to its siblings to the left and right of it,
+                        // so handle that appropriately by hiding 
+                        &:first-child,
+                        &:last-child {
+                            &:before {
+                                border-top: $chart-line-border;
+                                border-top-left-radius: $chart-corner-radius;
+                                top: -1 * $chart-line-height;
+                            }
+
+                            &:after {
+                                border: none;
+                            }
+                        }
+
+                        &:last-child {
+                            &:before {
+                                border-left: 0;
+                                border-right: $chart-line-border;
+                                border-top-left-radius: 0;
+                                border-top-right-radius: $chart-corner-radius;
+                                left: 0;
+                                right: 50%;
+                            }
+                        }
+
+                        // When it's an only child, there won't be a need to connect to its siblings so just remove the
+                        // top border which serves as the horizontal connector
+                        &:only-child {
+                            &:before {
+                                border-top: none;
+                                border-top-right-radius: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Have a fall back for older IE versions that don't have flexbox
+.ie9-fallback {
+    .flex-tree-container {
+        ul {
+            display: table;
+            table-layout: fixed;
+
+            li {
+                display: table-cell;
+                vertical-align: top;
+                width: 2%;
+            }
+        }
+    }
+}

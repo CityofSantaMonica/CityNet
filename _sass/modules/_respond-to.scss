@@ -1,0 +1,150 @@
+﻿/// Convenience method to return the maximum size of a view size. A desktop view size will
+/// return 0
+///
+/// @param {String} $media
+///   Accepted view sizes: `phones`, `phablets`, `tablets`
+///
+
+@function get-max-size($media) {
+    // scss-lint:disable ElsePlacement
+
+    @if      $media == phones      { @return $screen-xs-max; }
+    @else if $media == phablets    { @return $screen-ms-max; }
+    @else if $media == tablets     { @return $screen-sm-max; }
+    @else if $media == desktops    { @return $screen-md-max; }
+    @else if $media == widescreens { @return $screen-lg-max; }
+
+    @error "An unsupported (#{$media}) viewsize was passed to get-max-size()";
+}
+
+
+/// Convenience method to return the minimum size of a view size
+///
+/// @param {String} $media
+///   Accepted view sizes: `phones`, `phablets`, `tablets`
+///
+
+@function get-min-size($media) {
+    // scss-lint:disable ElsePlacement
+    
+    @if      $media == phones      { @return $screen-xs-min; }
+    @else if $media == phablets    { @return $screen-ms-min; }
+    @else if $media == tablets     { @return $screen-sm-min; }
+    @else if $media == desktops    { @return $screen-md-min; }
+    @else if $media == widescreens { @return $screen-lg-min; }
+
+    @error "An unsupported (#{$media}) viewsize was passed to get-min-size()";
+}
+
+/// A convenience method to test if the provided view size is a supported one
+///
+/// Supported viewsizes: `phones`, `phablets`, `tablets`, `desktops`
+///
+/// @param {Viewsize} $media
+///   The Viewsize that will be checked
+///
+
+@mixin valid-viewsize($media) {
+    @if not index(phones phablets tablets desktops widescreens, $media) {
+        @error "Unknown view size (#{$media}) given to _respond-only-to()";
+    }
+}
+
+/// Create a media query that will automatically handle max or min widths. When both $min
+/// and $max are set, both of them will be used and generate a media query with a minimum
+/// and maximum width. This mixin shouldn't be accessed directly but instead should only
+/// be used through one of the convenience mixins that uses this mixin.
+///
+/// @access private
+/// @content
+///
+/// @param {Number [unit]} $min [0]
+///   The minimum width for this media query to consider. When set to 0, a media query
+///   with a max-width will be generated
+///
+/// @param {Number [unit]} $max [0]
+///   The maximum width for this media query to consider. When set to 0, a media query
+///   with a min-width will be generated
+///
+
+@mixin media-size($min: 0, $max: 0) {
+    @if $min == $max {
+        @error "media-size() does not allow $min and $max both be equal to each other."
+    }
+    @else if $min > $max and $max != 0 {
+        @error "media-size() does not allow $min (#{$min}) to be greater $max (#{$max}).";
+    }
+    @else if $min < 0 or $max < 0 {
+        @error "media-size() does not allow either $min or $max to be less than 0.";
+    }
+
+    @if $min == 0 and $max != 0 {
+        @media only screen and (max-width: $max) { @content; }
+    }
+    @else if $min != 0 and $max == 0 {
+        @media only screen and (min-width: $min) { @content; }
+    }
+    @else if $min != 0 and $max != 0 {
+        @media only screen and (min-width: $min) and (max-width: $max) { @content; }
+    }
+    @else {
+        @error "media-size() does not allow $min and $max both be 0.";
+    }
+}
+
+/// Similar to `respond-to` with the exception that instead of larger views also inheriting
+/// these CSS rules, only a specific view size will able to see the content. Multiple view
+/// points can be specified and the rules will be applied to each view point
+///
+/// @content
+///
+/// @param {Viewsize} $media
+///   An argument list of Viewsizes that the specified CSS rules will be applied to
+///
+/// @example scss - Usage
+///   @include respond-only-to(phablets) {
+///       .phablet-only {
+///           display: block;
+///       }
+///   }
+///
+/// @example css - CSS Output
+///   @media only screen and (min-width: 481px) and (max-width: 768px) {
+///       .phablet-only {
+///           display: block;
+///       }
+///   }
+
+@mixin respond-only-to($media_list...) {
+    @each $media in $media_list {
+        @include valid-viewsize($media);
+        @include media-size(get-min-size($media), get-max-size($media)) { @content; }
+    }
+}
+
+
+/// A mixin to apply rules to a specific view size and larger
+///
+/// @content
+///
+/// @param {Viewsize} $media
+///   The Viewsize (and smaller) that will have the specified CSS rules applied to
+///
+/// @example scss - Usage
+///   @include respond-to(phablets) {
+///       .phablet-and-smaller {
+///           display: block;
+///       }
+///   }
+///
+/// @example css - CSS Output
+///   @media only screen and (max-width: 768px) {
+///       .phablet-and-smaller {
+///           display: block;
+///       }
+///   }
+
+@mixin respond-to($media) {
+    @include valid-viewsize($media);
+    @include media-size(get-min-size($media), 0) { @content; }
+}

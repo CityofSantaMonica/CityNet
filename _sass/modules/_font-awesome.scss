@@ -1,0 +1,38 @@
+%fa-perfect-alignment {
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    vertical-align: bottom;
+}
+
+/// Create a circle around a Font Awesome icon
+///
+/// @param {Number [unit]} $size
+///   The size of the circle
+
+@mixin set-circular-size($size) {
+//    @extend %fa-perfect-alignment;
+
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    vertical-align: bottom;
+    
+    height: $size;
+    line-height: $size;
+    width: $size;
+
+    // Stupid fix for "fa-tachometer" that has a weird whitespace on the top that throws off
+    // the perfect centering. 10px is a magic number
+    &.u-tachometer-fix {
+        line-height: $size - 10px;
+    }
+
+    &.u-server-fix {
+        line-height: $size + 5px;
+    }
+
+    .fa-play {
+        margin-left: 3px;
+    }
+}

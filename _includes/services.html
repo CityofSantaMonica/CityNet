@@ -1,0 +1,26 @@
+<section id="Services" class="products-section">
+    <div class="product-tabs" role="tabpanel">
+        <!-- Nav tabs -->
+        <ul id="ServicesTab" class="nav nav-tabs" role="tablist">
+            {% for service in site.data.services %}
+                {% if forloop.first == true %}
+                    {% assign active = "active" %}
+                {% else %}
+                    {% assign active = "" %}
+                {% endif %}
+            
+                <li role="presentation" class="{{ active }}"><a class="js-noSmoothScroll" href="#{{ service.jsid }}" aria-controls="messages" role="tab" data-toggle="tab">{{ service.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="container">
+        <div class="product-tabs" role="tabpanel">
+            <!-- Tab panes -->
+            <div id="ServicesTabContent" class="tab-content">
+                {% for service in site.data.services %}
+                    {% include templates/service.html service=service active=forloop.active %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>

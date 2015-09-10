@@ -1,0 +1,20 @@
+﻿// I'll leave this here just in case I decide to use triangles later
+
+.triangle-highlight {
+    display: none;
+
+    @include respond-to(tablets) {
+        display: block;
+    }
+
+    &.down {
+        @include triangle(500px 25px, $Color-White, down);
+        
+        left: 0;
+        margin-left: auto;
+        margin-right: auto;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+}
