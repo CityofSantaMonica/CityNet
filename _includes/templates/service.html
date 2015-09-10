@@ -7,9 +7,7 @@
 {% capture partial %}partials/{{ include.service.slug }}.html{% endcapture %}
 
 <div role="tabpanel" class="tab-pane {{ active }}" id="{{ include.service.jsid }}">
-    <div class="service-container">
-        <section class="service-{{ include.service.slug }}">
-            {% include {{ partial }} %}
-        </section>
+    <div class="service-container service-{{ include.service.slug }}">
+        {% include {{ partial }} %}
     </div>
 </div>

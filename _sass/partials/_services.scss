@@ -71,6 +71,84 @@
                         margin-top: 0;
                     }
                 }
+                
+                .service {
+                    &-wavelengths {
+                        .image {
+                            text-align: center;
+                        }
+                        
+                        .speeds {
+                            $colors: (
+                                "one": #54A9A4,
+                                "ten": #389898,
+                                "ben": #2E8995
+                            );
+                            $height: 60px;
+                            
+                            div {
+                                margin-bottom: 15px;
+                            }
+                            
+                            .circle {
+                                border-radius: 50%;
+                                color: #FFFFFF;
+                                display: inline-block;
+                                height: $height;
+                                line-height: $height;
+                                text-align: center;
+                                width: $height;
+                            }
+                            
+                            @each $size, $color in $colors {
+                                .#{$size}-gb {
+                                    .circle {
+                                        background-color: $color;
+                                    }
+                                }
+                            }
+                        
+                            .time {
+                                float: right;
+                                font-size: 24px;
+                                line-height: $height;
+                            }
+                        }
+                    }
+                
+                    &-darkfiber {
+                        .fiber-table {
+                            display: table;
+                            table-layout: fixed;
+                            
+                            .header,
+                            .body {
+                                display: table-row;
+                                
+                                > div {
+                                    display: table-cell;
+                                    padding: 10px 20px;
+                                    text-align: center;
+                                    width: 33.33%;
+                                    
+                                    > p {
+                                        text-transform: uppercase;
+                                    }
+                                    
+                                    img {
+                                        max-width: 100%;
+                                    }
+                                }
+                            }
+                            
+                            .body {
+                                > div {
+                                    vertical-align: middle;
+                                }
+                            }
+                        }
+                    }
+                }
 
                 .service-container {
                     margin: 0 auto;
