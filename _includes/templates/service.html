@@ -8,6 +8,19 @@
 
 <div role="tabpanel" class="tab-pane {{ active }}" id="{{ include.service.jsid }}">
     <div class="service-container service-{{ include.service.slug }}">
+        <h3 class="product-header product-{{ include.service.slug }}">{{ include.service.name }}</h3>
+
+        <div class="product-spiel table table-sm table-align-middle">
+            <div class="icon table-cell">
+                <img alt="{{ include.service.name }} Icon" src="assets/images/{{ include.service.slug }}.png" />
+            </div>
+            <div class="description table-cell table-full">
+                <h4>{{ include.service.header }}</h4>
+                <p>{{ include.service.description }}</p>
+                <p><em>{{ include.service.epilogue }}</em></p>
+            </div>
+        </div>
+        
         {% include {{ partial }} %}
     </div>
 </div>

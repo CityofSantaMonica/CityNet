@@ -1,10 +1,5 @@
-<div>
-    <h4>Compare Speeds</h4>
-    <p>For downloading a 40GB Blu-ray Movie</p>
-    <p><em>Estimated Transfer Time</em></p>
-</div>
 <div class="row">
-    {% for service in site.data.services[0].images %}
+    {% for service in site.data.services[0].meta.images %}
         <div class="col-xs-6 col-md-3 text-center">
             <img src="assets/images/broadband-{{ service }}.png" />
         </div>

@@ -1,24 +1,25 @@
 - name: Broadband
   slug: broadband
   jsid: Services-Broadband
-  images:
-    - 100mb
-    - 1gb
-    - 10gb
-    - 100gb
-    
+  header: Compare Broadband Speeds
+  description: For downloading a 40GB Blu-ray Movie
+  epilogue: Estimated Transfer Time
+  meta:
+    images:
+      - 100mb
+      - 1gb
+      - 10gb
+      - 100gb
+
 - name: Wavelengths
   slug: wavelengths
   jsid: Services-Wavelengths
-  services:
-    - 1 GB
-    - 10 GB
-    - 100 GB
-    
+  header: Compare Wavelengths Speeds
+  description: For transferring 2TB Production File to Disaster Recovery Site
+  epilogue: Estimated Transfer Time
+
 - name: Dark Fiber
   slug: darkfiber
   jsid: Services-DarkFiber
-  services:
-    - Point-to-Point Topology
-    - Ring Topology
-    - Mesh Topology
+  header: Network Topology Options
+  description: Provisioning private dark fiber network

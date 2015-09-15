@@ -1,3 +1,37 @@
+$broadband-color: #D6A717;
+$wavelengths-color: #399898;
+$darkfiber-color: #83496A;
+
+.product-header {
+    @extend .hidden-sm;
+    @extend .hidden-md;
+    @extend .hidden-lg;
+    
+    &.product-broadband {
+        color: $broadband-color;
+    }
+    
+    &.product-wavelengths {
+        color: $wavelengths-color;
+    }
+    
+    &.product-darkfiber {
+        color: $darkfiber-color;
+    }
+}
+
+.product-spiel {
+    .icon {
+        img {
+            height: 80px;
+        }
+    }
+    
+    .description {
+        padding-left: 15px;
+    }
+}
+
 .products-section {
     padding: {
         bottom: 20px;
