@@ -25,6 +25,10 @@ $darkfiber-color: #83496A;
         img {
             height: 80px;
         }
+        
+        @include respond-only-to(phones, phablets) {
+            text-align: center;
+        }
     }
     
     .description {

@@ -9,20 +9,20 @@ $breakpoints: (
     @include respond-to($target) {
         .table-#{$name} {
             display: table;
+            
+            .table-row {
+                display: table-row;
+            }
+
+            .table-cell {
+                display: table-cell;
+            }
         }
     }
 }
 
 .table {
     width: 100%;
-}
-            
-.table-row {
-    display: table-row;
-}
-
-.table-cell {
-    display: table-cell;
 }
 
 .table-full {
