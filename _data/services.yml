@@ -1,11 +1,11 @@
 - name: Broadband
   slug: broadband
   jsid: Services-Broadband
-  services:
-    - 100 MB
-    - 1 GB
-    - 10 GB
-    - 100 GB
+  images:
+    - 100mb
+    - 1gb
+    - 10gb
+    - 100gb
     
 - name: Wavelengths
   slug: wavelengths

@@ -4,16 +4,9 @@
     <p><em>Estimated Transfer Time</em></p>
 </div>
 <div class="row">
-    <div class="col-xs-6 col-md-3">
-        <img src="assets/images/broadband-100mb.png" />
-    </div>
-    <div class="col-xs-6 col-md-3">
-        <img src="assets/images/broadband-1gb.png" />
-    </div>
-    <div class="col-xs-6 col-md-3">
-        <img src="assets/images/broadband-10gb.png" />
-    </div>
-    <div class="col-xs-6 col-md-3">
-        <img src="assets/images/broadband-100gb.png" />
-    </div>
+    {% for service in site.data.services[0].images %}
+        <div class="col-xs-6 col-md-3 text-center">
+            <img src="assets/images/broadband-{{ service }}.png" />
+        </div>
+    {% endfor %}
 </div>
