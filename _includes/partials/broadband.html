@@ -1,7 +1,10 @@
 <div class="row">
     {% for service in site.data.services[0].meta.images %}
         <div class="col-xs-6 col-sm-3 text-center">
-            <img src="assets/images/broadband-{{ service }}.png" />
+            <section class="monitor">
+                <img class="monitor-bg" src="assets/images/everest.png" />
+                <img src="assets/images/broadband-{{ service }}.png" />
+            </section>
         </div>
     {% endfor %}
 </div>

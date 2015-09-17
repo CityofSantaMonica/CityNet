@@ -2,6 +2,18 @@ $broadband-color: #D6A717;
 $wavelengths-color: #399898;
 $darkfiber-color: #83496A;
 
+.monitor {
+    display: inline-block;
+    position: relative;
+}
+
+.monitor-bg {
+    margin-top: 3px;
+    max-width: 100%;
+    position: absolute;
+    z-index: -100;
+}
+
 .product-header {
     @extend .hidden-sm;
     @extend .hidden-md;
