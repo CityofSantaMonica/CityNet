@@ -32,7 +32,8 @@
         z-index: 10;
 
         @include respond-to(phablets) {
-            bottom: 25%;
+            // @TODO Change back to 25% when mobile video is fixed
+            bottom: 35%;
         }
 
         @include respond-to(desktops) {
