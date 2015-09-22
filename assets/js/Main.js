@@ -66,6 +66,21 @@ function closeVideo(videoID) {
     onStage = false;
 }
 
+function loadYouTubePlayers() {
+    $(".js-ytplayer").each(function () {
+        var dataID = $(this).data("ytid");
+        var jQueryID = "player-" + dataID;
+
+        YouTubePlayers[jQueryID] = new YT.Player(jQueryID, {
+            videoId: dataID
+        });
+    });
+}
+
+window.onYouTubeIframeAPIReady = function () {
+    loadYouTubePlayers();
+}
+
 $(document).ready(function () {
     var $body = $("body");
     var $main = $("main");
@@ -94,17 +109,18 @@ $(document).ready(function () {
     if ($(document).width() >= 992) {
         $('#jumbotube').jumbotube({
             videoID: 'KR30gxH_Dj4',
-            onApiReady: function () {
-                $(".js-ytplayer").each(function () {
-                    var dataID = $(this).data("ytid");
-                    var jQueryID = "player-" + dataID;
-
-                    YouTubePlayers[jQueryID] = new YT.Player(jQueryID, {
-                        videoId: dataID
-                    });
-                });
-            }
+            onApiReady: loadYouTubePlayers
         });
+    }
+    
+    // YouTube players weren't loaded because Jumbotube wasn't used
+    if (YouTubePlayers.length == 0)
+    {
+        // Load YouTube's JS API
+        var tag = document.createElement('script');
+        tag.src = "//www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
     }
 
     var parentPos = $('#History').offset();
