@@ -18,3 +18,5 @@ social:
 # Build Settings
 
 markdown: redcarpet
+sass:
+    style: compressed

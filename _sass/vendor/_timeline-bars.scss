@@ -1,0 +1,84 @@
+$green: #93C842;
+$orange: #D6A714;
+$white: #FFFFFF;
+
+$yearWidth: 200px;
+$eventHeight: 24px;
+$eventMargin: 15px;
+$theaterPadding: 20px;
+
+.c-timeline--bars {
+  display: table;
+  height: 400px;
+}
+
+.c-year {
+  bottom: 0;
+  display: table-cell;
+  padding-left: $eventMargin;
+  vertical-align: bottom;
+  width: $yearWidth;
+}
+
+.c-year__date,
+.c-year__event {
+  margin-top: $eventMargin;
+}
+
+.c-year__event {
+  $header: #{&}__header p;
+  
+  #{$header} {
+    visibility: hidden;
+  }
+  
+  &--visible {
+    #{$header} {
+      visibility: visible;
+    }
+  }
+}
+
+.c-year__date {
+  font-weight: bold;
+  text-align: center;
+}
+
+.c-year__event__header {
+  background-color: $green;
+  color: $white;
+  cursor: pointer;
+  font-weight: bold;
+  height: $eventHeight;
+  line-height: $eventHeight;
+  text-align: center;
+  
+  &:hover {
+    background-color: $orange;
+  }
+}
+
+.c-year__event__desc {
+  display: none;
+}
+
+.c-year__theater {
+  background-color: $orange;
+  color: $white;
+  display: none;
+  height: 160px;
+  overflow: hidden;
+  padding: $theaterPadding;
+}
+
+.c-year__theater__actor {
+  height: 100%;
+  overflow: hidden;
+}
+
+.c-year__event__date {
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
