@@ -58,6 +58,7 @@
 .js-enabled {
   @include respond-to(desktops) {
     .c-timeline {
+      cursor: move;
       display: table;
       height: 400px;
       position: absolute;
