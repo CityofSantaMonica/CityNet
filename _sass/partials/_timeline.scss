@@ -34,6 +34,10 @@
 }
 
 @include media-breakpoint-down(md) {
+  .u-timeline__container {
+    position: static !important;
+  }
+
   .c-timeline {
     margin: {
       right: auto;
