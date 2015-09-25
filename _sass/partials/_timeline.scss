@@ -33,8 +33,30 @@
     }
 }
 
+@include media-breakpoint-down(md) {
+  .c-timeline {
+    margin: {
+      right: auto;
+      left: auto;
+    }
+    padding: {
+      right: 15px;
+      left: 15px;
+    }
+    max-width: 748px;
+  }
+  
+  .c-year__date {
+    display: none;
+  }
+  
+  .c-year__event__date {
+    font-weight: bold;
+  }
+}
+
 .js-enabled {
-  @include respond-to(tablets) {
+  @include respond-to(desktops) {
     .c-timeline {
       display: table;
       height: 400px;
