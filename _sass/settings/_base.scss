@@ -7,17 +7,10 @@ $chart-line-height: 25px;
 $chart-min-width: $screen-sm-min;
 
 // CSS Timeline Settings
-$Timeline-Height: 720px;
-$Timeline-HeightDifference: 120px;
-$Timeline-Indentation: 80px;
-
-$Timeline-ConnectorWidth: 4px;
-$Timeline-ConnectorType: solid;
-$Timeline-ConnectorColor: $Color-CityNet-Green;;
-$Timeline-ConnectorLine: $Timeline-ConnectorWidth $Timeline-ConnectorType $Timeline-ConnectorColor;
-
-$Timeline-EventMaxWidth: 200px;
-$Timeline-EventMargin: 10px;
+$Timeline-YearWidth: 200px;
+$Timeline-EventHeight: 24px;
+$Timeline-EventMargin: 15px;
+$Timeline-TheaterPadding: 20px;
 
 // CSS Backgrounds
 $Background-Alternate-Color: $Color-CityNet-DarkBlue;

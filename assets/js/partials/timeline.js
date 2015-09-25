@@ -1,13 +1,6 @@
-function timelineMobileResize(eventObj) {
-    var eventLabel = eventObj.find("label")[0];
-        eventLabel.click();
-}
-
 function getMaxTimelineMovement() {
-    var timelineMaxWidth = 0;
+    var timelineMaxWidth = $("#timeline").width();
     var $window = $(document);
-
-    $('#timeline > *').each(function () { timelineMaxWidth += $(this).width(); });
 
     return (timelineMaxWidth - $window.width()) * -1;
 }
@@ -51,10 +44,6 @@ $(document).ready(function () {
     var $timeline = $("#draggable-timeline");
     var parentPos = $('#History').offset();
     var childPos = $timeline.offset();
-
-    $(".c-timeline__work__content").click(function () {
-        timelineMobileResize($(this).parent());
-    });
 
     // Setup our timeline to be draggable
     draggableTimeline();
