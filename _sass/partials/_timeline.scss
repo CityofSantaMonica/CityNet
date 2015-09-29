@@ -118,6 +118,11 @@
       line-height: $Timeline-EventHeight;
       text-align: center;
 
+      p {
+        height: 100%;
+        overflow: hidden;
+      }
+        
       &:hover {
         background-color: $Color-Orange;
       }

@@ -8,31 +8,31 @@
 - year: 1998
   events:
     - date: February 24 1998
-      title: Santa Monica Adopts Telecom Master Plan
+      title: Telecom Master Plan
       desc: City of Santa Monica [adopts](http://www.smgov.net/departments/council/agendas/1998/19980224/s1998022409-A.html) Santa Monica’s [Telecommunications Master Plan](http://muninetworks.org/sites/www.muninetworks.org/files/Telecommunications Master Plan Body.pdf)
 
 - year: 2000
   events:
     - date: 2000-2002
-      title: INET for City, SMMUSD, & SMC
+      title: INET Construction 
       desc: City constructs an Institutional Network (INET) for the City, Santa Monica School District, and Santa Monica College utilizing aerial fiber owned by local cable company.
 
 - year: 2003
   events:
     - date: 2003
-      title: City builds own network 
+      title: Municipal Network
       desc: With telecom cost savings from INET, City initiates Phase I construction of its own underground Fiber Optic Network.
 
 - year: 2004
   events:
     - date: July 2004
-      title: Right of Way Ordinance Adopted
+      title: Right of Way Ordinance
       desc: City adopts a Public Right of Way Ordinance regulating time, plan, and manner of assets in Public Right of Way.
 
 - year: 2006
   events:
     - date: April 25 2006
-      title: City offers Dark Fiber Services
+      title: Dark Fiber Leasing 
       desc: City starts leasing Dark Fiber to community stakeholders.
 
 - year: 2010
@@ -48,42 +48,42 @@
       link: http://tmsearch.uspto.gov/bin/showfield?f=doc&state=4809:o63l3l.2.1
 
     - date: March 15 2010
-      title: CityNet launches 10 Gigabit Network
+      title: 10 Gigabit Network
       desc: City of Santa Monica leverages its City-owned network to launch 10 Gigabit Lit Fiber services, with minimum speeds of 100MBPS and rates 67% lower than other available offerings.
       link: http://www.prlog.org/10580399-santa-monica-launches-10gb-broadband-initiative.html
 
     - date: June 22 2010
-      title: City offers Lit Fiber Services
+      title: Lit Fiber Launched
       desc: City starts offering Lit Fiber to community stakeholders.
 
 - year: 2011
   events:
     - date: May 4 2011
-      title: Harvard Kennedy School Innovation Award
+      title: Harvard Innovation Award
       desc: Ash Center at the Harvard Kennedy School of Government Top 25 Innovations in Government
       link: http://www.hks.harvard.edu/news-events/news/press-releases/pr-ash-top-25-innovations-may11
 
     - date: September 7 2011
-      title: InfoWeek 500 Innovation Award
+      title: InfoWeek Innovation Award
       desc: InformationWeek 500 Government IT Innovator
       link: http://www.informationweek.com/government/leadership/15-government-it-innovators-informationweek-500/d/d-id/1100004?page_number=12
 
 - year: 2012
   events:
     - date: June 14, 2012
-      title: Pres. Obama Executive Order
+      title: Pres. Obama Exec Order
       desc: President Barack Obama signs Executive Order Accelerating Broadband Infrastructure Deployment
       link: https://www.whitehouse.gov/the-press-office/2012/06/14/executive-order-accelerating-broadband-infrastructure-deployment
 
     - date: June 27 2012
-      title: CityNet + GAO Broadband Research
+      title: GAO Broadband Research
       desc: Santa Monica participates in research by Government Accountability Office for its report on how "Planning and Flexibility Are Key to Effectively Deploying Broadband Conduit through Federal Highway Projects" highlighting Santa Monica City Net operations.
       link: http://www.gao.gov/assets/600/591928.pdf
 
 - year: 2013
   events:
     - date: February 14 2013
-      title: City Net + FHWA Broadband Research
+      title: FHWA Research
       desc: Santa Monica City Net presented to FHWA Office of Policy and Federal Working Group on Broadband Infrastructure Deployment on Santa Monica’s unique broadband model.
 
     - date: May 2013
@@ -94,28 +94,28 @@
 - year: 2014
   events:
     - date: August 29 2014
-      title: New America Foundation FCC Comments
+      title: FCC Comments
       desc: City Net included as one example of broadband model in New America Foundation Open Technology Institute Comments to FCC
       link: http://apps.fcc.gov/ecfs/document/view?id=7521826113
 
     - date: September 19 2014
-      title: CityNet upgrades to 100 Gigabit
+      title: 100 Gigabit Upgrade
       desc: Santa Monica upgrades network to 100 Gigabits per Second!
       link: http://smdp.com/santa-monicas-fiber-network-100-gigabits/141980
 
     - date: October 20 2014
-      title: CityNet + Next Century Cities
+      title: Next Century Cities
       desc: City of Santa Monica, an Inaugural Partner of Next Century Cities, participates in organization launch event in Santa Monica at Cross Campus.
       link: http://nextcenturycities.org/2014/10/20/next-century-cities-launches-with-32-cities-leading-on-high-speed-internet/
 
 - year: 2015
   events:
     - date: January 2015
-      title: Office of POTUS + Community Broadband
+      title: POTUS + Broadband
       desc: Office of the President releases "Community-Based Broadband Solutions" paper
       link: https://www.whitehouse.gov/sites/default/files/docs/community-based_broadband_report_by_executive_office_of_the_president.pdf
 
     - date: February 26 2015
-      title: FCC Approves Net Neutrality
+      title: Net Neutrality Passes
       desc: FCC approves Net Neutrality rules, classifies broadband as a utility
       link: http://www.fcc.gov/document/fcc-adopts-strong-sustainable-rules-protect-open-internet
