@@ -117,6 +117,10 @@
       height: $Timeline-EventHeight;
       line-height: $Timeline-EventHeight;
       text-align: center;
+    
+      &--active {
+        background-color: $Color-Orange;
+      }
 
       p {
         height: 100%;
