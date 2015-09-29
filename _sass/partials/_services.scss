@@ -5,6 +5,14 @@ $darkfiber-color: #83496A;
 .monitor {
     display: inline-block;
     position: relative;
+    
+    .time {
+        color: $broadband-color;
+        font-size: 35px;
+        margin-top: 50px;
+        font-weight: bold;
+        text-align: center;
+    }
 }
 
 .monitor-bg {

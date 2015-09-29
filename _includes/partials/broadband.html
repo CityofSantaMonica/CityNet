@@ -2,8 +2,14 @@
     {% for service in site.data.services[0].meta.images %}
         <div class="col-xs-6 col-sm-3 text-center">
             <section class="monitor">
-                <img class="monitor-bg" src="assets/images/everest.png" />
-                <img src="assets/images/broadband-{{ service }}.png" />
+                {% if service.image %}
+                    <img class="monitor-bg" src="assets/images/{{ service.image }}" />
+                {% else %}
+                    {% include {{ service.include }} %}
+                {% endif %}
+                
+                <img src="assets/images/broadband-{{ service.name }}-transparent.png" />
+                <p class="time">{{ service.time }}</p>
             </section>
         </div>
     {% endfor %}
