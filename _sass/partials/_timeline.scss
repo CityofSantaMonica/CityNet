@@ -53,7 +53,7 @@
   .c-year__event__header,
   .c-year__theater,
   .c-year__date {
-    display: none;
+    display: none !important;
   }
   
   .c-year__event__date {
@@ -129,13 +129,15 @@
 
     .c-year__theater {
       background-color: $Color-Orange;
+      color: $Color-White;
       display: none;
       height: 160px;
       overflow: hidden;
       padding: $Timeline-TheaterPadding;
       
-      &, & a {
+      & a {
         color: $Color-White;
+        text-decoration: underline;
       }
     }
 
