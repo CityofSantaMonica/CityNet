@@ -1,28 +1,7 @@
-.u-timeline-container {
-    border-top: 1px solid transparent; // Prevent collapsing margins
-    cursor: default;
-    padding-left: 20px;
-    padding-right: 20px;
-    position: static;
-
-    @include respond-to(desktops) {
-        cursor: move;
-        margin-top: 20px;
-        padding-left: 0;
-        padding-right: 0;
-        position: absolute;
-    }
-
-    .c-timeline__container__sealevel,
-    .c-timeline__container__superscript {
-        height: 60.5%;
-    }
-}
-
 .timeline-section {
     @include clearfix();
 
-    min-height: 900px;
+    min-height: 550px;
     max-width: 100%;
     overflow: hidden;
     position: static;
@@ -54,42 +33,133 @@
     }
 }
 
-.js-disabled {
-    .u-timeline-container {
-        @include container-fixed();
+@include media-breakpoint-down(md) {
+  .u-timeline__container {
+    position: static !important;
+  }
 
-        position: static;
+  .c-timeline {
+    margin: {
+      right: auto;
+      left: auto;
     }
+    padding: {
+      right: 15px;
+      left: 15px;
+    }
+    max-width: 748px;
+  }
+
+  .c-year__event__header,
+  .c-year__theater,
+  .c-year__date {
+    display: none !important;
+  }
+  
+  .c-year__event__date {
+    font-weight: bold;
+  }
 }
 
 .js-enabled {
-    .u-timeline-container {
-        .c-timeline {
-            @include respond-to(desktops) {
-                width: 9999px;
-            }
-        }
-
-        .c-timeline__event__article {
-            padding-left: 10px;
-            padding-top: 10px;
-
-            @include respond-to(desktops) {
-                padding: 0;
-            }
-        }
-
-        .c-timeline__event__container {
-            @include respond-to(desktops) {
-                background-color: rgba($Color-CityNet-Green, 0.2);
-            }
-        }
-
-        .c-timeline__container__event__article {
-            @include respond-to(desktops) {
-                padding-top: 10px;
-                padding-bottom: 10px;
-            }
-        }
+  @include respond-to(desktops) {
+    .c-timeline {
+      cursor: move;
+      display: table;
+      height: 400px;
+      position: absolute;
+      table-layout: fixed;
+      width: 100%;
     }
+
+    .c-year {
+      bottom: 0;
+      display: table-cell;
+      padding-left: $Timeline-EventMargin;
+      vertical-align: bottom;
+      width: $Timeline-YearWidth;
+      
+      &:last-child {
+        padding-right: $Timeline-EventMargin;
+        width: $Timeline-YearWidth + $Timeline-EventMargin;
+      }
+    }
+
+    .c-year__date,
+    .c-year__event {
+      margin-top: $Timeline-EventMargin;
+    }
+
+    .c-year__event {
+      $header: #{&}__header p;
+
+      #{$header} {
+        visibility: hidden;
+      }
+
+      &--visible {
+        #{$header} {
+          visibility: visible;
+        }
+      }
+    }
+
+    .c-year__date {
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .c-year__event__header {
+      background-color: $Color-CityNet-Green;
+      color: $Color-White;
+      cursor: pointer;
+      font-weight: bold;
+      height: $Timeline-EventHeight;
+      line-height: $Timeline-EventHeight;
+      text-align: center;
+    
+      &--active {
+        background-color: $Color-Orange;
+      }
+
+      p {
+        height: 100%;
+        overflow: hidden;
+      }
+        
+      &:hover {
+        background-color: $Color-Orange;
+      }
+    }
+
+    .c-year__event__desc {
+      display: none;
+    }
+
+    .c-year__theater {
+      background-color: $Color-Orange;
+      color: $Color-White;
+      display: none;
+      height: 160px;
+      overflow: hidden;
+      padding: $Timeline-TheaterPadding;
+      
+      & a {
+        color: $Color-White;
+        text-decoration: underline;
+      }
+    }
+
+    .c-year__theater__actor {
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .c-year__event__date {
+      font-size: 12px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+  }
 }

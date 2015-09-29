@@ -1,0 +1,17 @@
+<div class="c-year__event" data-year="{{ include.year }}" data-id="{{ include.year}}{{ include.id }}">
+    <div class="c-year__event__header">
+        <p>{{ include.event.title }}</p>
+    </div>
+    <article class="c-year__event__desc">
+        <p class="c-year__event__date">{{ include.event.date }}</p>
+        {% if include.event.link %}
+            <p>
+                <a href="{{ include.event.link }}">{{ include.event.desc }}</a>
+            </p>
+        {% else %}
+            <p>
+                {{ include.event.desc | markdownify }}
+            </p>
+        {% endif %}
+    </article>
+</div>

@@ -1,5 +1,7 @@
+var tlActiveClass = "c-year__event__header--active";
 var openYear = -1;
 var openEvent = -1;
+var $selected = 0;
 
 function closePreviousYear () {
     var $target = $("#timeline-theater-" + openYear);
@@ -34,10 +36,20 @@ function animateTheater (eID, year, content) {
 
 $(document).ready(function () {
     $(".c-year__event__header").click(function () {
-        var $parent = $(this).parent();
+        var $this = $(this);
+        var $parent = $this.parent();
         var eID = $parent.data("id");
         var year = $parent.data("year");
         var content = $parent.find(".c-year__event__desc").html();
+
+        $selected = $("." + tlActiveClass);
+        
+        if ($selected) {
+            $selected.removeClass(tlActiveClass);
+        }
+        
+        $this.addClass(tlActiveClass);
+        $selected = $this;
 
         animateTheater(eID, year, content);
     });

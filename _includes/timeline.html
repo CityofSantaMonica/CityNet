@@ -5,10 +5,25 @@
         <span class="timelineControl" data-direction="right"><i class="fa fa-caret-right"></i></span>
     </div>
 
-    <div id="draggable-timeline" class="u-timeline-container">
+    <div id="draggable-timeline" class="u-timeline__container">
         <div id="timeline" class="c-timeline">
-            {% for event in site.data.timeline %}
-                {% include templates/timeline-event.html event=event %}
+            {% for year in site.data.events %}
+                <div class="c-year">
+                    <!-- Theater -->
+                    <div id="timeline-theater-{{ year.year }}" class="c-year__theater">
+                        <div class="c-year__theater__actor"></div>
+                    </div>
+
+                    <!-- Events -->
+                    {% for event in year.events %}
+                        {% include templates/event.html year=year.year event=event id=forloop.index %}
+                    {% endfor %}
+                    
+                    <!-- Year -->
+                    <div class="c-year__date">
+                        <p>{{ year.year }}</p>
+                    </div>
+                </div>
             {% endfor %}
         </div>
     </div>
