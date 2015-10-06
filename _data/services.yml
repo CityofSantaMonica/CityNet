@@ -4,12 +4,23 @@
   header: Compare Broadband Speeds
   description: For downloading a 40GB Blu-ray Movie
   epilogue: Estimated Transfer Time
+  button: true
+  idTarget: "monitors-start"
   meta:
     images:
-      - 100mb
-      - 1gb
-      - 10gb
-      - 100gb
+      - name: 100mb
+        time: 57m
+        image: climbing.png
+      - name: 1gb
+        time: 6m
+        image: avalanche.png
+      - name: 10gb
+        time: 33s
+        image: celebrating.png
+      - name: 100gb
+        time: 3s
+        image: ending.png
+        #include: partials/broadband-video.html
 
 - name: Wavelengths
   slug: wavelengths
