@@ -126,6 +126,19 @@ $animations: (
     }
 }
 
+.product-button {
+    display: inline-block;
+    margin: {
+        left: 20px;
+        top: 10px;
+    }
+    vertical-align: top !important;
+    
+    .btn {
+        width: 80px;
+    }
+}
+
 .products-section {
     padding: {
         bottom: 20px;

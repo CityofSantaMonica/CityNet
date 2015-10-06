@@ -15,15 +15,17 @@
                 <img alt="{{ include.service.name }} Icon" src="assets/images/{{ include.service.slug }}.png" />
             </div>
             <div class="description table-cell table-full">
-                <h4>{{ include.service.header }}</h4>
-                <p>{{ include.service.description }}</p>
-                <p><em>{{ include.service.epilogue }}</em></p>
-            </div>
-            {% if include.service.button %}
-                <div class="table-cell hidden-xs hidden-ms">
-                    <p class="btn btn-primary" id="{{ include.service.idTarget }}">Start</p>
+                <div class="inline-block">
+                    <h4>{{ include.service.header }}</h4>
+                    <p>{{ include.service.description }}</p>
+                    <p><em>{{ include.service.epilogue }}</em></p>
                 </div>
-            {% endif %}
+                {% if include.service.button %}
+                    <div class="product-button hidden-xs hidden-ms">
+                        <p class="btn btn-primary" id="{{ include.service.idTarget }}">Start</p>
+                    </div>
+                {% endif %}
+            </div>
         </div>
         
         {% include {{ partial }} %}
