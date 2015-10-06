@@ -8,6 +8,17 @@
 
     @include respond-to(desktops) {
         position: relative;
+
+        &:before {
+            background: url("../images/waves.png");
+            background-size: cover;
+            content: '';
+            height: 100%;
+            opacity: 0.4;
+            position: absolute;
+            width: 100%;
+            z-index: -10;
+        }
     }
 }
 
