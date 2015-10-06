@@ -12,6 +12,7 @@
         &:before {
             background: url("../images/waves.png");
             background-size: cover;
+            background-position: 0 -90px;
             content: '';
             height: 100%;
             opacity: 0.4;
