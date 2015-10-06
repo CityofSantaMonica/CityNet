@@ -2,10 +2,29 @@ $broadband-color: #D6A717;
 $wavelengths-color: #399898;
 $darkfiber-color: #83496A;
 
-.monitor {
-    display: inline-block;
-    position: relative;
-    
+// Monitors CSS
+
+$relativeHeight: percentage(126/185);
+$animations: (
+    100mb: (
+        speed: 4s,
+        height: 45%
+    ),
+    1gb: (
+        speed: 3s,
+        height: 35%
+    ),
+    10gb: (
+        speed: 2s,
+        height: 20%
+    ),
+    100gb: (
+        speed: 1s,
+        height: 0%
+    )
+);
+
+.monitor-container {
     .time {
         color: $broadband-color;
         font-size: 35px;
@@ -15,12 +34,43 @@ $darkfiber-color: #83496A;
     }
 }
 
+.monitor {
+    display: inline-block;
+    position: relative;
+}
+
 .monitor-bg {
     margin-top: 3px;
     max-width: 100%;
     position: absolute;
     z-index: -100;
 }
+
+.monitor-screen {
+    background-color: black;
+    bottom: 13%;
+    padding-top: $relativeHeight;
+    position: absolute;
+    width: 100%;
+    z-index: -50;
+}
+
+@each $name, $animation in $animations {
+    $keyFrameName: slide#{$name};
+
+    @keyframes #{$keyFrameName} {
+        0%   { padding-top: $relativeHeight; }
+        100% { padding-top: map-get($animation, height); }
+    }
+
+    .monitor-#{$name} {
+        &.animated {
+            animation: #{$keyFrameName} map-get($animation, speed) forwards linear;
+        }
+    }
+}
+
+// Products
 
 .product-header {
     @extend .hidden-sm;
