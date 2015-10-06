@@ -5,7 +5,7 @@
                 <section class="monitor">
                     {% if service.image %}
                         <img class="monitor-bg" src="assets/images/{{ service.image }}" />
-                        <div class="monitor-screen monitor-{{ service.name }} animated"></div>
+                        <div class="monitor-screen monitor-{{ service.name }}"></div>
                     {% else %}
                         {% include {{ service.include }} %}
                     {% endif %}

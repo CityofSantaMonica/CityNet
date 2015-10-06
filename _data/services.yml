@@ -4,6 +4,8 @@
   header: Compare Broadband Speeds
   description: For downloading a 40GB Blu-ray Movie
   epilogue: Estimated Transfer Time
+  button: true
+  idTarget: "monitors-start"
   meta:
     images:
       - name: 100mb

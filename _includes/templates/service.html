@@ -19,6 +19,11 @@
                 <p>{{ include.service.description }}</p>
                 <p><em>{{ include.service.epilogue }}</em></p>
             </div>
+            {% if include.service.button %}
+                <div class="table-cell hidden-xs hidden-ms">
+                    <p class="btn btn-primary" id="{{ include.service.idTarget }}">Start</p>
+                </div>
+            {% endif %}
         </div>
         
         {% include {{ partial }} %}

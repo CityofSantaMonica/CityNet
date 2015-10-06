@@ -28,9 +28,20 @@ $animations: (
     .time {
         color: $broadband-color;
         font-size: 35px;
-        margin-top: 50px;
         font-weight: bold;
+        margin-top: 50px;
+        opacity: 0;
         text-align: center;
+        
+        @include media-breakpoint-down(sm) {
+            margin-bottom: 15px;
+            margin-top: 15px;
+            opacity: 1;
+        }
+        
+        &.animated {
+            @include animation(opaqueAnimation 1s forwards linear);
+        }
     }
 }
 
@@ -55,17 +66,26 @@ $animations: (
     z-index: -50;
 }
 
+@keyframes opaqueAnimation {
+    0%   { opacity: 0 }
+    100% { opacity: 1 }
+}
+
 @each $name, $animation in $animations {
     $keyFrameName: slide#{$name};
 
-    @keyframes #{$keyFrameName} {
+    @include keyframes($keyFrameName) {
         0%   { padding-top: $relativeHeight; }
         100% { padding-top: map-get($animation, height); }
     }
 
     .monitor-#{$name} {
+        @include media-breakpoint-down(sm) {
+            padding-top: map-get($animation, height);
+        }
+        
         &.animated {
-            animation: #{$keyFrameName} map-get($animation, speed) forwards linear;
+            @include animation(#{$keyFrameName} map-get($animation, speed) forwards linear);
         }
     }
 }
