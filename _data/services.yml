@@ -8,16 +8,17 @@
     images:
       - name: 100mb
         time: 57m
-        image: universal-logo.png
+        image: climbing.png
       - name: 1gb
         time: 6m
         image: avalanche.png
       - name: 10gb
         time: 33s
-        image: everest.png
+        image: celebrating.png
       - name: 100gb
         time: 3s
-        include: partials/broadband-video.html
+        image: ending.png
+        #include: partials/broadband-video.html
 
 - name: Wavelengths
   slug: wavelengths
