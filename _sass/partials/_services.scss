@@ -90,6 +90,17 @@ $animations: (
     }
 }
 
+// Wavelengths
+.service-wavelengths {
+    .time {
+        opacity: 0;
+    }
+    
+    .animated {
+        @include animation(opaqueAnimation 1s forwards linear);
+    }
+}
+
 // Products
 
 .product-header {
