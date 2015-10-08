@@ -1,0 +1,51 @@
+.gauge-container {
+  height: 350px;
+  margin: auto;
+  position: relative;
+  width: 250px;
+}
+
+.gauge {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  
+  @each $size, $value in $gauges {
+    &.#{$size} {
+      $margin: -1 * ($value / 2);
+      
+      height: $value;
+      margin: {
+        left: $margin;
+        top: $margin;
+      }
+      width: $value;
+    }
+  }
+}
+
+.js-disabled {
+    .wavelengths-gauge {
+        display: none;
+    }
+    
+    .wavelengths-fallback {
+        display: block;
+    }
+}
+
+.js-enabled {
+    .wavelengths-gauge {
+        @include media-breakpoint-down(sm) {
+            display: none;
+        }
+    }
+    
+    .wavelengths-fallback {
+        display: none;
+        
+        @include media-breakpoint-down(sm) {
+            display: block;
+        }
+    }
+}

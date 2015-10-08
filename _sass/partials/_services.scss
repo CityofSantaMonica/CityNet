@@ -242,6 +242,10 @@ $animations: (
                             
                             div {
                                 margin-bottom: 15px;
+                                
+                                @include media-breakpoint-up(md) {
+                                    width: 200px;
+                                }
                             }
                             
                             .circle {
@@ -264,7 +268,7 @@ $animations: (
                         
                             .time {
                                 float: right;
-                                font-size: 24px;
+                                font-size: 34px;
                                 line-height: $height;
                             }
                         }

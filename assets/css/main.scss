@@ -1,6 +1,20 @@
 ---
 ---
 
+$gauges: (
+    {% for gauge in site.data.services[1].meta.gauges %}
+        {{ gauge.name }}: {{ gauge.size }}px
+
+        {% if forloop.last != true %}
+            ,
+        {% endif %}
+    {% endfor %}
+);
+
+//
+// Imports
+//
+
 // Palette and variables
 @import 'settings/palette';
 @import 'settings/variables';
@@ -31,6 +45,7 @@
 @import 'partials/generic';
 @import 'partials/header';
 @import 'partials/tables';
+@import 'partials/gauges';
 @import 'partials/services';
 @import 'partials/features';
 @import 'partials/testimonials';

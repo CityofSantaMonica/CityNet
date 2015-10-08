@@ -1,8 +1,19 @@
-<div class="row">
-    <div class="col-sm-offset-3 col-sm-6 image">
-        <img src="assets/images/wavelengths-speed.png" />
+<div class="table-sm">
+    <div class="table-cell table-full text-center">
+        <div class="wavelengths-gauge">
+            <div class="gauge-container">
+                {% for gauge in site.data.services[1].meta.gauges %}
+                    <div class="gauge {{ gauge.name }}">
+                        <input class="knob" data-fgColor="{{ gauge.color }}" data-width="{{ gauge.size }}" data-height="{{ gauge.size }}" data-thickness="{{ gauge.thickness }}" data-value="{{ gauge.value }}">
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="wavelengths-fallback">
+            <img src="assets/images/wavelengths-speed.png" />
+        </div>
     </div>
-    <article class="col-sm-3 speeds">
+    <article class="table-cell speeds">
         <div class="one-gb">
             <span class="circle">1 GB</span>
             <span class="time">5h</span>
