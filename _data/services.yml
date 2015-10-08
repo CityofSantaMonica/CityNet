@@ -28,6 +28,25 @@
   header: Compare Wavelengths Speeds
   description: For transferring 2TB Production File to Disaster Recovery Site
   epilogue: Estimated Transfer Time
+  button: true
+  idTarget: "wavelengths-start"
+  meta:
+    gauges:
+      - name: large
+        size: 300
+        color: "#54A9A4"
+        thickness: 0.3
+        value: 75
+      - name: medium
+        size: 200
+        color: "#389898"
+        thickness: 0.45
+        value: 50
+      - name: small
+        size: 100
+        color: "#2E8995"
+        thickness: 0.7
+        value: 15
 
 - name: Dark Fiber
   slug: darkfiber
