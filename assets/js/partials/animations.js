@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $("#monitors-start").click(function () {
-        $(".monitor-screen").addClass("animated");
-        $(".monitor-container .time").addClass("animated");
+        $(".service-broadband .monitor-screen").addClass("animated");
+        $(".service-broadband .fadein-animation").addClass("animated");
 
         $(this).addClass("disabled");
     });

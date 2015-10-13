@@ -29,6 +29,6 @@ $(document).ready(function() {
         });
 
         $this.addClass("disabled");
-        $(".service-wavelengths .time").addClass("animated");
+        $(".service-wavelengths .fadein-animation").addClass("animated");
     });
 });
