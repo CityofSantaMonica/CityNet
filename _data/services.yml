@@ -2,7 +2,7 @@
   slug: broadband
   jsid: Services-Broadband
   header: Compare Broadband Speeds
-  description: For downloading a 40GB Blu-ray Movie
+  description: For Post Production: Download a 40GB Blu-Ray Movie
   epilogue: Estimated Transfer Time
   button: true
   idTarget: "monitors-start"
@@ -26,7 +26,7 @@
   slug: wavelengths
   jsid: Services-Wavelengths
   header: Compare Wavelengths Speeds
-  description: For transferring 2TB Production File to Disaster Recovery Site
+  description: For Disaster Recovery: Transfer 2TB Production File to DR Site
   epilogue: Estimated Transfer Time
   button: true
   idTarget: "wavelengths-start"
