@@ -2,7 +2,8 @@
   slug: broadband
   jsid: Services-Broadband
   header: Compare Broadband Speeds
-  description: For Post Production: Download a 40GB Blu-Ray Movie
+  description: >-
+    For Post Production: Download a 40GB Blu-Ray Movie
   epilogue: Estimated Transfer Time
   button: true
   idTarget: "monitors-start"
@@ -26,7 +27,8 @@
   slug: wavelengths
   jsid: Services-Wavelengths
   header: Compare Wavelengths Speeds
-  description: For Disaster Recovery: Transfer 2TB Production File to DR Site
+  description: >-
+    For Disaster Recovery: Transfer 2TB Production File to DR Site
   epilogue: Estimated Transfer Time
   button: true
   idTarget: "wavelengths-start"
@@ -52,4 +54,5 @@
   slug: darkfiber
   jsid: Services-DarkFiber
   header: Compare Network Topology Options
-  description: For Network Architecture: Provision Private Dark Fiber Network
+  description: >-
+    For Network Architecture: Provision Private Dark Fiber Network
