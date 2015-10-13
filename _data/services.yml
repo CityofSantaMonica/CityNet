@@ -51,5 +51,5 @@
 - name: Dark Fiber
   slug: darkfiber
   jsid: Services-DarkFiber
-  header: Network Topology Options
-  description: Provisioning private dark fiber network
+  header: Compare Network Topology Options
+  description: For Network Architecture: Provision Private Dark Fiber Network
