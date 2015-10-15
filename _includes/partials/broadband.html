@@ -4,7 +4,7 @@
             <section class="monitor-container">
                 <section class="monitor">
                     {% if service.image %}
-                        <img class="monitor-bg" src="assets/images/{{ service.image }}" />
+                        <img class="monitor-bg" src="assets/images/monitors/{{ service.image }}" />
                         <div class="monitor-screen monitor-{{ service.name }}"></div>
                     {% else %}
                         {% include {{ service.include }} %}

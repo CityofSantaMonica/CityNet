@@ -11,17 +11,16 @@
     images:
       - name: 100mb
         time: 57m
-        image: climbing.png
+        image: boats.png
       - name: 1gb
         time: 6m
-        image: avalanche.png
+        image: intersection.png
       - name: 10gb
         time: 33s
-        image: celebrating.png
+        image: waterfall.png
       - name: 100gb
         time: 3s
-        image: ending.png
-        #include: partials/broadband-video.html
+        image: 100gb.gif
 
 - name: Wavelengths
   slug: wavelengths
