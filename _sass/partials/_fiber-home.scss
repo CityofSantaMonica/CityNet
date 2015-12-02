@@ -1,0 +1,58 @@
+$images: (
+    "IMG_1655.JPG",
+    "IMG_1675.JPG",
+    "IMG_1681.JPG",
+    "IMG_1690.JPG",
+    "IMG_1700.JPG",
+    "IMG_1730.JPG"
+);
+
+$positions: (
+    top center,
+    top,
+    top center,
+    top center,
+    top center,
+    top
+);
+
+.fiber-carousel {
+    height: 420px;
+
+    @include respond-to(tablets) {
+        height: 630px;
+    }
+
+    .carousel-inner {
+        height: 100%;
+    }
+
+    .item {
+        height: 100%;
+        background-attachment: scroll;
+        background-color: #777;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        @for $i from 1 through length($images) {
+            $image: nth($images, $i);
+
+            &.image-#{$i} {
+                background-image: url('../images/fiber-home/#{$image}');
+                background-position: nth($positions, $i);
+            }
+        }
+    }
+}
+
+.fiber {
+    h1 {
+        color: #C14640;
+    }
+
+    img {
+        margin-right: 15px;
+        vertical-align: bottom;
+    }
+}

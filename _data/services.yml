@@ -55,3 +55,7 @@
   header: Compare Network Topology Options
   description: >-
     For Network Architecture: Provision Private Dark Fiber Network
+
+- name: Fiber to the Home
+  slug: fiber-home
+  url: fiber-to-the-home/

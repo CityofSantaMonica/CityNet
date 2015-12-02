@@ -10,7 +10,11 @@
                 {% endif %}
             
                 <li role="presentation" class="{{ active }}">
-                    <a class="js-noSmoothScroll" href="#{{ service.jsid }}" aria-controls="messages" role="tab" data-toggle="tab">
+                    {% if service.url %}
+                        <a class="js-noSmoothScroll" href="{{ service.url | prepend: site.baseurl }}">
+                    {% else %}
+                        <a class="js-noSmoothScroll" href="#{{ service.jsid }}" aria-controls="messages" role="tab" data-toggle="tab">
+                    {% endif %}
                         <img alt="{{ service.name }}" class="service-icon" src="assets/images/{{ service.slug }}.png" />
                         <span>{{ service.name }}</span>
                     </a>
@@ -23,7 +27,9 @@
             <!-- Tab panes -->
             <div id="ServicesTabContent" class="tab-content">
                 {% for service in site.data.services %}
-                    {% include templates/service.html service=service active=forloop.active %}
+                    {% unless service.url %}
+                        {% include templates/service.html service=service active=forloop.active %}
+                    {% endunless %}
                 {% endfor %}
             </div>
         </div>
