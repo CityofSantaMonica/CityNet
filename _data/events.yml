@@ -14,7 +14,7 @@
 - year: 2000
   events:
     - date: 2000-2002
-      title: INET Construction 
+      title: INET Construction
       desc: City constructs an Institutional Network (INET) for the City, Santa Monica School District, and Santa Monica College utilizing aerial fiber owned by local cable company.
 
 - year: 2003
@@ -32,7 +32,7 @@
 - year: 2006
   events:
     - date: April 25 2006
-      title: Dark Fiber Leasing 
+      title: Dark Fiber Leasing
       desc: City starts leasing Dark Fiber to community stakeholders.
 
 - year: 2010
@@ -119,3 +119,8 @@
       title: Net Neutrality Passes
       desc: FCC approves Net Neutrality rules, classifies broadband as a utility
       link: http://www.fcc.gov/document/fcc-adopts-strong-sustainable-rules-protect-open-internet
+
+    - date: November 30, 2015
+      title: 10GB FTTH Digital Pilot
+      desc: 10GB Fiber To The Home Digital Inclusion Pilot
+      link: http://smcitynet.com/fiber-to-the-home/
