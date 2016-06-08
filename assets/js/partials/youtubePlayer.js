@@ -33,7 +33,7 @@ window.onYouTubeIframeAPIReady = function () {
 
 $(document).ready(function () {
     var $body = $("body");
-		
+
 	// Only make Jumbotube run on desktops
     if ($(document).width() >= 992) {
         $('#jumbotube').jumbotube({
@@ -41,17 +41,17 @@ $(document).ready(function () {
             onApiReady: loadYouTubePlayers
         });
     }
-    
+
     // YouTube players weren't loaded because Jumbotube wasn't used
     if (YouTubePlayers.length === 0)
     {
         // Load YouTube's JS API
         var tag = document.createElement('script');
-        tag.src = "//www.youtube.com/iframe_api";
+        tag.src = "https://www.youtube.com/iframe_api";
         var firstScriptTag = document.getElementsByTagName('script')[0];
         firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
     }
-  
+
 	// Youtube Popup
     $(".youtube-player").click(function () {
         var dataID = $(this).data('ytid');
