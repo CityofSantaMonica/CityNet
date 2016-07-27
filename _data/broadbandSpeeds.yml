@@ -1,0 +1,11 @@
+- name: Japan
+  abbreviation: jp
+  speeds:
+    up:
+      speed: 150
+      units: Mbps
+    down:
+      speed: 75
+      units: Mbps
+  description: >
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet at commodi consectetur debitis dolorem eligendi excepturi exercitationem facere nemo nihil, placeat qui sed suscipit tempora temporibus ullam velit vitae voluptatibus.

@@ -14,6 +14,8 @@ social:
     - icon: youtube
       site: https://www.youtube.com/channel/UCRgGqJaU9t12Qr4lE2moevQ
 
+apis:
+  googlemaps: AIzaSyC1VlyFyVgEdLI8_QS63ZG50kZ9DxEqZrU
 
 # Build Settings
 

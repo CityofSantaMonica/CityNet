@@ -6,6 +6,7 @@
     <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
+    <link rel="stylesheet" href="{{ "assets/css/flags.css" | prepend: site.baseurl }}" />
     <link rel="stylesheet" href="{{ "assets/css/main.css" | prepend: site.baseurl }}" />
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css" />
     <link rel="stylesheet" href="{{ "assets/js/jumbotube/jquery.jumbotube.css" | prepend: site.baseurl }}" />
@@ -25,10 +26,13 @@
 
       ga('create', 'UA-11670373-32', 'auto');
       ga('send', 'pageview');
-
     </script>
 
-    <script src="{{ "assets/js/jumbotube/jquery.jumbotube.js" | prepend: site.baseurl }}" ></script>
-    <script src="{{ "assets/js/jquery.knob.min.js" | prepend: site.baseurl }}" ></script>
-    <script src="{{ "assets/js/site.js" | prepend: site.baseurl }}" ></script>
+    <script>
+        var baseURL = "{{ site.baseurl }}";
+    </script>
+
+    <script src="{{ 'assets/js/jumbotube/jquery.jumbotube.js' | prepend: site.baseurl }}" ></script>
+    <script src="{{ 'assets/js/jquery.knob.min.js' | prepend: site.baseurl }}" ></script>
+    <script src="{{ 'assets/js/site.js' | prepend: site.baseurl }}" ></script>
 </head>
