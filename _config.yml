@@ -2,7 +2,7 @@
 
 title: Santa Monica CityNet
 baseurl: "/"
-url: "http://smcitynet.com" # the base hostname & protocol for your site
+url: "http://www.smcitynet.com" # the base hostname & protocol for your site
 
 contact:
     phone: "3104342612" # treat this like a string

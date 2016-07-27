@@ -1,6 +1,6 @@
 # CityNet
 
-100 Gigabit Community Broadband in Santa Monica http://smcitynet.com/
+100 Gigabit Community Broadband in Santa Monica http://www.smcitynet.com/
 
 ## Developing
 
