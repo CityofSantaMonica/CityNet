@@ -32,16 +32,14 @@
     // Wide trees won't work well on a mobile screen so we need to limit ourselves
     @media(min-width: $chart-min-width) {
         ul {
-            @include display(flex);
-
+            display: flex;
             list-style: none;
             padding-left: 0;
             text-align: center;
 
             > li {
-                @include flex(1);
-
                 box-sizing: border-box;
+                flex: 1;
                 padding: 0 5px;
 
                 // We'll accept any container that's not a `ul` or `li` because that would just be silly
