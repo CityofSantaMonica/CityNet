@@ -40,7 +40,7 @@ $animations: (
         }
         
         &.animated {
-            @include animation(opaqueAnimation 1s forwards linear);
+            animation: opaqueAnimation 1s forwards linear;
         }
     }
 }
@@ -74,7 +74,7 @@ $animations: (
 @each $name, $animation in $animations {
     $keyFrameName: slide#{$name};
 
-    @include keyframes($keyFrameName) {
+    @keyframes #{$keyFrameName} {
         0%   { padding-top: $relativeHeight; }
         100% { padding-top: map-get($animation, height); }
     }
@@ -85,7 +85,7 @@ $animations: (
         }
         
         &.animated {
-            @include animation(#{$keyFrameName} map-get($animation, speed) forwards linear);
+            animation: #{$keyFrameName} map-get($animation, speed) forwards linear;
         }
     }
 }

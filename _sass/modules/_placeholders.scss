@@ -1,5 +1,6 @@
 %official-gradient {
-    @include linear-gradient($Color-CityNet-DarkBlue, $Color-CityNet-LightBlue, 50%, $Color-CityNet-DarkBlue);
+    background: $Color-CityNet-DarkBlue;
+    background-image: linear-gradient($Color-CityNet-DarkBlue, $Color-CityNet-LightBlue, 50%, $Color-CityNet-DarkBlue);
 }
 
 %text-shadow {

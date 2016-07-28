@@ -1,10 +1,6 @@
 [submodule "assets/js/jumbotube"]
 	path = assets/js/jumbotube
 	url = https://github.com/allejo/Jumbotube.git
-[submodule "_sass/vendor/bourbon"]
-	path = _sass/vendor/bourbon
-	url = https://github.com/Sujevo/lib-bourbon.git
-	branch = v4_2
 [submodule "_sass/vendor/bootstrap"]
 	path = _sass/vendor/bootstrap
 	url = https://github.com/twbs/bootstrap-sass.git
