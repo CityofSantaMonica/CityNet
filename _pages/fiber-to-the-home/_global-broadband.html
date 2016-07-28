@@ -4,22 +4,21 @@
 
         <div class="row">
             {% for country in site.data.broadbandSpeeds %}
-                <div class="col-md-4">
-                    <div class="panel panel-default panel-speeds">
+                <div class="col-sm-6 col-md-4">
+                    <div class="panel panel-default text-center">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><div class="flag flag-{{ country.abbreviation }}"></div> {{ country.name }}</h3>
+                            <h3 class="panel-title">{{ country.name }}</h3>
                         </div>
                         <div class="panel-body">
-                            <p>{{ country.description }}</p>
-                            <hr>
-                            <div class="row text-center">
-                                <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-xs-4 col-xs-offset-4 col-ms-offset-1 col-sm-offset-1">
+                                    <div class="flag-wrapper">
+                                        <div class="img-thumbnail flag flag-icon-background flag-icon-{{ country.abbreviation }}"></div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-ms-6 col-sm-6">
                                     <p class="h5"><i class="fa fa-arrow-circle-o-down"></i> Avg. Down</p>
                                     <span class="h3">{{ country.speeds.down.speed }}</span> <span class="h6">{{ country.speeds.down.units }}</span>
-                                </div>
-                                <div class="col-md-6">
-                                    <p class="h5"><i class="fa fa-arrow-circle-o-up"></i> Avg. Up</p>
-                                    <span class="h3">{{ country.speeds.up.speed }}</span> <span class="h6">{{ country.speeds.up.units }}</span>
                                 </div>
                             </div>
                         </div>

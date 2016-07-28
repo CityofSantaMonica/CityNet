@@ -1,11 +1,69 @@
+- name: Sweden
+  abbreviation: se
+  speeds:
+    down:
+      speed: 239.82
+      units: Mbps
+
 - name: Japan
   abbreviation: jp
   speeds:
-    up:
-      speed: 150
-      units: Mbps
     down:
-      speed: 75
+      speed: 165.96
       units: Mbps
-  description: >
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet at commodi consectetur debitis dolorem eligendi excepturi exercitationem facere nemo nihil, placeat qui sed suscipit tempora temporibus ullam velit vitae voluptatibus.
+
+- name: Luxembourg
+  abbreviation: lu
+  speeds:
+    down:
+      speed: 147.09
+      units: Mbps
+
+- name: Norway
+  abbreviation: "no"
+  speeds:
+    down:
+      speed: 142.75
+      units: Mbps
+
+- name: Netherlands
+  abbreviation: nl
+  speeds:
+    down:
+      speed: 134.20
+      units: Mbps
+
+- name: France
+  abbreviation: fr
+  speeds:
+    down:
+      speed: 108.71
+      units: Mbps
+
+- name: Portugal
+  abbreviation: pt
+  speeds:
+    down:
+      speed: 94.89
+      units: Mbps
+
+- name: Canada
+  abbreviation: ca
+  speeds:
+    down:
+      speed: 92.15
+      units: Mbps
+
+- name: Slovak Republic
+  abbreviation: sk
+  speeds:
+    down:
+      speed: 84.71
+      units: Mbps
+
+- name: Ireland
+  abbreviation: is
+  speeds:
+    down:
+      speed: 75.57
+      units: Mbps
