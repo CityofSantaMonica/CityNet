@@ -1,0 +1,11 @@
+$positions: top, right, bottom, left;
+
+@each $bp, $size in $grid-breakpoints {
+    @each $pos in $positions {
+        .border-#{$bp}-#{$pos} {
+            @include media-breakpoint-up($bp) {
+                border-#{$pos}: 1px solid #DDDDDD;
+            }
+        }
+    }
+}
