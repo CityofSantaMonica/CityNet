@@ -8,9 +8,11 @@
                 {% else %}
                     {% assign active = "" %}
                 {% endif %}
-            
+
                 <li role="presentation" class="{{ active }}">
-                    {% if service.url %}
+                    {% if service.url and service.url contains 'http' %}
+                        <a class="js-noSmoothScroll" href="{{ service.url }}">
+                    {% elsif service.url %}
                         <a class="js-noSmoothScroll" href="{{ service.url | prepend: site.baseurl }}">
                     {% else %}
                         <a class="js-noSmoothScroll" href="#{{ service.jsid }}" aria-controls="messages" role="tab" data-toggle="tab">
