@@ -1,6 +1,7 @@
 $broadband-color: #D6A717;
 $wavelengths-color: #399898;
 $darkfiber-color: #83496A;
+$ftth-color: #C14640;
 
 // Monitors CSS
 
@@ -32,13 +33,13 @@ $animations: (
         margin-top: 50px;
         opacity: 0;
         text-align: center;
-        
+
         @include media-breakpoint-down(sm) {
             margin-bottom: 15px;
             margin-top: 15px;
             opacity: 1;
         }
-        
+
         &.animated {
             animation: opaqueAnimation 1s forwards linear;
         }
@@ -83,7 +84,7 @@ $animations: (
         @include media-breakpoint-down(sm) {
             padding-top: map-get($animation, height);
         }
-        
+
         &.animated {
             animation: #{$keyFrameName} map-get($animation, speed) forwards linear;
         }
@@ -111,17 +112,21 @@ $animations: (
     @extend .hidden-sm;
     @extend .hidden-md;
     @extend .hidden-lg;
-    
+
     &.product-broadband {
         color: $broadband-color;
     }
-    
+
     &.product-wavelengths {
         color: $wavelengths-color;
     }
-    
+
     &.product-darkfiber {
         color: $darkfiber-color;
+    }
+
+    &.product-fiber-home {
+        color: $ftth-color;
     }
 }
 
@@ -130,12 +135,12 @@ $animations: (
         img {
             height: 80px;
         }
-        
+
         @include respond-only-to(phones, phablets) {
             text-align: center;
         }
     }
-    
+
     .description {
         padding-left: 15px;
     }
@@ -148,7 +153,7 @@ $animations: (
         top: 10px;
     }
     vertical-align: top !important;
-    
+
     .btn {
         width: 80px;
     }
@@ -197,7 +202,7 @@ $animations: (
                         background-color: transparent;
                         border: 0;
                     }
-                    
+
                     img {
                         height: 20px;
                         margin-right: 5px;
@@ -227,26 +232,26 @@ $animations: (
                         margin-top: 0;
                     }
                 }
-                
+
                 .service {
                     &-broadband {
                         .row {
                             > div {
                                 padding-left: 5px;
                                 padding-right: 5px;
-                                
+
                                 img {
                                     max-width: 100%;
                                 }
                             }
                         }
                     }
-                    
+
                     &-wavelengths {
                         .image {
                             text-align: center;
                         }
-                        
+
                         .speeds {
                             $colors: (
                                 "one": #54A9A4,
@@ -254,15 +259,15 @@ $animations: (
                                 "ben": #2E8995
                             );
                             $height: 60px;
-                            
+
                             div {
                                 margin-bottom: 15px;
-                                
+
                                 @include media-breakpoint-up(md) {
                                     width: 200px;
                                 }
                             }
-                            
+
                             .circle {
                                 border-radius: 50%;
                                 color: #FFFFFF;
@@ -272,7 +277,7 @@ $animations: (
                                 text-align: center;
                                 width: $height;
                             }
-                            
+
                             @each $size, $color in $colors {
                                 .#{$size}-gb {
                                     .circle {
@@ -280,7 +285,7 @@ $animations: (
                                     }
                                 }
                             }
-                        
+
                             .time {
                                 float: right;
                                 font-size: 34px;
@@ -288,32 +293,32 @@ $animations: (
                             }
                         }
                     }
-                
+
                     &-darkfiber {
                         .fiber-table {
                             display: table;
                             table-layout: fixed;
-                            
+
                             .header,
                             .body {
                                 display: table-row;
-                                
+
                                 > div {
                                     display: table-cell;
                                     padding: 10px 20px;
                                     text-align: center;
                                     width: 33.33%;
-                                    
+
                                     > p {
                                         text-transform: uppercase;
                                     }
-                                    
+
                                     img {
                                         max-width: 100%;
                                     }
                                 }
                             }
-                            
+
                             .body {
                                 > div {
                                     vertical-align: middle;

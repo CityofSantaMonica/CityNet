@@ -29,9 +29,7 @@
             <!-- Tab panes -->
             <div id="ServicesTabContent" class="tab-content">
                 {% for service in site.data.services %}
-                    {% unless service.url %}
-                        {% include templates/service.html service=service active=forloop.active %}
-                    {% endunless %}
+                    {% include templates/service.html service=service active=forloop.active %}
                 {% endfor %}
             </div>
         </div>
