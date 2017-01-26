@@ -93,7 +93,9 @@ $animations: (
 
 // Wavelengths
 .fadein-animation {
-    opacity: 0;
+    @include media-breakpoint-up(md) {
+        opacity: 0;
+    }
 
     &.animated {
         @include animation(opaqueAnimation 1s forwards linear);
