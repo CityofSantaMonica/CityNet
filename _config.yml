@@ -17,6 +17,8 @@ social:
 
 # Build Settings
 
-markdown: redcarpet
+include:
+  - _pages
+
 sass:
     style: compressed
