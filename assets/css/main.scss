@@ -1,8 +1,9 @@
 ---
 ---
 
+{% assign service = site.data.services | where: 'name', 'Wavelengths' %}
 $gauges: (
-    {% for gauge in site.data.services[1].meta.gauges %}
+    {% for gauge in service[0].meta.gauges %}
         {{ gauge.name }}: {{ gauge.size }}px
 
         {% if forloop.last != true %}

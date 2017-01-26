@@ -10,13 +10,7 @@
                 {% endif %}
 
                 <li role="presentation" class="{{ active }}">
-                    {% if service.url and service.url contains 'http' %}
-                        <a class="js-noSmoothScroll" href="{{ service.url }}">
-                    {% elsif service.url %}
-                        <a class="js-noSmoothScroll" href="{{ service.url | prepend: site.baseurl }}">
-                    {% else %}
-                        <a class="js-noSmoothScroll" href="#{{ service.jsid }}" aria-controls="messages" role="tab" data-toggle="tab">
-                    {% endif %}
+                    <a class="js-noSmoothScroll" href="#{{ service.jsid }}" aria-controls="messages" role="tab" data-toggle="tab">
                         <img alt="{{ service.name }}" class="service-icon" src="assets/images/{{ service.slug }}.png" />
                         <span>{{ service.name }}</span>
                     </a>

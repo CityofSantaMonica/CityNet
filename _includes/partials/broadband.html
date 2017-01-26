@@ -1,5 +1,6 @@
+{% assign service = site.data.services | where: 'name', 'Broadband' %}
 <div class="row">
-    {% for service in site.data.services[0].meta.images %}
+    {% for service in service.meta.images %}
         <div class="col-xs-6 col-sm-3 text-center">
             <section class="monitor-container">
                 <section class="monitor">
