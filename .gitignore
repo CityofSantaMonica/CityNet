@@ -61,3 +61,6 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# We don't need the lock file since GitHub pages won't use it anyways
+Gemfile.lock
