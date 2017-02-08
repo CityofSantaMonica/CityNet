@@ -5,6 +5,10 @@
 - name: Gary Carter
   position: Community Broadband Manager
   employees:
+    - name: David Xiao
+      position: Broadband Services Intern
+    - name: Kevin Grossi
+      position: Broadband Services Intern
     - name: John Meschyan
       position: Broadband Services Engineer
     - name: Norbert de Lendorff-Koszowicz
@@ -14,4 +18,4 @@
     - name: Jamila Haji
       position: Community Services Program Specialist
     - name: Omar De Arcos
-      position: Administrative Intern
+      position: Broadband Services Intern
